@@ -15,6 +15,7 @@
 		49A3BDE721B235BD00123F30 /* meetingroom_reserve_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDE621B235BD00123F30 /* meetingroom_reserve_iOSTests.m */; };
 		49A3BDF221B235BD00123F30 /* meetingroom_reserve_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDF121B235BD00123F30 /* meetingroom_reserve_iOSUITests.m */; };
 		49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BE0121B25B3500123F30 /* LogInVC.m */; };
+		49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		49A3BDF321B235BD00123F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A3BE0021B25B3500123F30 /* LogInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInVC.h; sourceTree = "<group>"; };
 		49A3BE0121B25B3500123F30 /* LogInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInVC.m; sourceTree = "<group>"; };
+		49B4CBDB21B26AD000CD9591 /* UIImage+XG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+XG.h"; sourceTree = "<group>"; };
+		49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XG.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 		49A3BE0321B25B4100123F30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49B4CBDB21B26AD000CD9591 /* UIImage+XG.h */,
+				49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			files = (
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
+				49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */,
 				49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZPEDND434;
 				INFOPLIST_FILE = meetingroom_reserve_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZPEDND434;
 				INFOPLIST_FILE = meetingroom_reserve_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
