@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDCE21B235BB00123F30 /* AppDelegate.m */; };
+		49A3BDD521B235BB00123F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD321B235BB00123F30 /* Main.storyboard */; };
+		49A3BDD721B235BD00123F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD621B235BD00123F30 /* Assets.xcassets */; };
+		49A3BDDA21B235BD00123F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD821B235BD00123F30 /* LaunchScreen.storyboard */; };
+		49A3BDDD21B235BD00123F30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDDC21B235BD00123F30 /* main.m */; };
+		49A3BDE721B235BD00123F30 /* meetingroom_reserve_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDE621B235BD00123F30 /* meetingroom_reserve_iOSTests.m */; };
+		49A3BDF221B235BD00123F30 /* meetingroom_reserve_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDF121B235BD00123F30 /* meetingroom_reserve_iOSUITests.m */; };
+		49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BE0121B25B3500123F30 /* LogInVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49A3BDE321B235BD00123F30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49A3BDC221B235BB00123F30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49A3BDC921B235BB00123F30;
+			remoteInfo = meetingroom_reserve_iOS;
+		};
+		49A3BDEE21B235BD00123F30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49A3BDC221B235BB00123F30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49A3BDC921B235BB00123F30;
+			remoteInfo = meetingroom_reserve_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49A3BDCA21B235BB00123F30 /* meetingroom_reserve_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetingroom_reserve_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A3BDCD21B235BB00123F30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49A3BDCE21B235BB00123F30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49A3BDD421B235BB00123F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49A3BDD621B235BD00123F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49A3BDD921B235BD00123F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49A3BDDB21B235BD00123F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49A3BDDC21B235BD00123F30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49A3BDE221B235BD00123F30 /* meetingroom_reserve_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetingroom_reserve_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A3BDE621B235BD00123F30 /* meetingroom_reserve_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meetingroom_reserve_iOSTests.m; sourceTree = "<group>"; };
+		49A3BDE821B235BD00123F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49A3BDED21B235BD00123F30 /* meetingroom_reserve_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetingroom_reserve_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A3BDF121B235BD00123F30 /* meetingroom_reserve_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meetingroom_reserve_iOSUITests.m; sourceTree = "<group>"; };
+		49A3BDF321B235BD00123F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49A3BE0021B25B3500123F30 /* LogInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInVC.h; sourceTree = "<group>"; };
+		49A3BE0121B25B3500123F30 /* LogInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49A3BDC721B235BB00123F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3BDDF21B235BD00123F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3BDEA21B235BD00123F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49A3BDC121B235BB00123F30 = {
+			isa = PBXGroup;
+			children = (
+				49A3BDCC21B235BB00123F30 /* meetingroom_reserve_iOS */,
+				49A3BDE521B235BD00123F30 /* meetingroom_reserve_iOSTests */,
+				49A3BDF021B235BD00123F30 /* meetingroom_reserve_iOSUITests */,
+				49A3BDCB21B235BB00123F30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49A3BDCB21B235BB00123F30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49A3BDCA21B235BB00123F30 /* meetingroom_reserve_iOS.app */,
+				49A3BDE221B235BD00123F30 /* meetingroom_reserve_iOSTests.xctest */,
+				49A3BDED21B235BD00123F30 /* meetingroom_reserve_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49A3BDCC21B235BB00123F30 /* meetingroom_reserve_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				49A3BDFF21B25AFF00123F30 /* LogIn */,
+				49A3BDCD21B235BB00123F30 /* AppDelegate.h */,
+				49A3BDCE21B235BB00123F30 /* AppDelegate.m */,
+				49A3BDD321B235BB00123F30 /* Main.storyboard */,
+				49A3BDD621B235BD00123F30 /* Assets.xcassets */,
+				49A3BDD821B235BD00123F30 /* LaunchScreen.storyboard */,
+				49A3BDDB21B235BD00123F30 /* Info.plist */,
+				49A3BDDC21B235BD00123F30 /* main.m */,
+			);
+			path = meetingroom_reserve_iOS;
+			sourceTree = "<group>";
+		};
+		49A3BDE521B235BD00123F30 /* meetingroom_reserve_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				49A3BDE621B235BD00123F30 /* meetingroom_reserve_iOSTests.m */,
+				49A3BDE821B235BD00123F30 /* Info.plist */,
+			);
+			path = meetingroom_reserve_iOSTests;
+			sourceTree = "<group>";
+		};
+		49A3BDF021B235BD00123F30 /* meetingroom_reserve_iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				49A3BDF121B235BD00123F30 /* meetingroom_reserve_iOSUITests.m */,
+				49A3BDF321B235BD00123F30 /* Info.plist */,
+			);
+			path = meetingroom_reserve_iOSUITests;
+			sourceTree = "<group>";
+		};
+		49A3BDFF21B25AFF00123F30 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				49A3BE0421B25B4B00123F30 /* Models */,
+				49A3BE0321B25B4100123F30 /* Views */,
+				49A3BE0521B25B5300123F30 /* Controller */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		49A3BE0321B25B4100123F30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49A3BE0421B25B4B00123F30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49A3BE0521B25B5300123F30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49A3BE0021B25B3500123F30 /* LogInVC.h */,
+				49A3BE0121B25B3500123F30 /* LogInVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49A3BDC921B235BB00123F30 /* meetingroom_reserve_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A3BDF621B235BD00123F30 /* Build configuration list for PBXNativeTarget "meetingroom_reserve_iOS" */;
+			buildPhases = (
+				49A3BDC621B235BB00123F30 /* Sources */,
+				49A3BDC721B235BB00123F30 /* Frameworks */,
+				49A3BDC821B235BB00123F30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = meetingroom_reserve_iOS;
+			productName = meetingroom_reserve_iOS;
+			productReference = 49A3BDCA21B235BB00123F30 /* meetingroom_reserve_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49A3BDE121B235BD00123F30 /* meetingroom_reserve_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A3BDF921B235BD00123F30 /* Build configuration list for PBXNativeTarget "meetingroom_reserve_iOSTests" */;
+			buildPhases = (
+				49A3BDDE21B235BD00123F30 /* Sources */,
+				49A3BDDF21B235BD00123F30 /* Frameworks */,
+				49A3BDE021B235BD00123F30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49A3BDE421B235BD00123F30 /* PBXTargetDependency */,
+			);
+			name = meetingroom_reserve_iOSTests;
+			productName = meetingroom_reserve_iOSTests;
+			productReference = 49A3BDE221B235BD00123F30 /* meetingroom_reserve_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49A3BDEC21B235BD00123F30 /* meetingroom_reserve_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A3BDFC21B235BD00123F30 /* Build configuration list for PBXNativeTarget "meetingroom_reserve_iOSUITests" */;
+			buildPhases = (
+				49A3BDE921B235BD00123F30 /* Sources */,
+				49A3BDEA21B235BD00123F30 /* Frameworks */,
+				49A3BDEB21B235BD00123F30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49A3BDEF21B235BD00123F30 /* PBXTargetDependency */,
+			);
+			name = meetingroom_reserve_iOSUITests;
+			productName = meetingroom_reserve_iOSUITests;
+			productReference = 49A3BDED21B235BD00123F30 /* meetingroom_reserve_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49A3BDC221B235BB00123F30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "张文轩";
+				TargetAttributes = {
+					49A3BDC921B235BB00123F30 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					49A3BDE121B235BD00123F30 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 49A3BDC921B235BB00123F30;
+					};
+					49A3BDEC21B235BD00123F30 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 49A3BDC921B235BB00123F30;
+					};
+				};
+			};
+			buildConfigurationList = 49A3BDC521B235BB00123F30 /* Build configuration list for PBXProject "meetingroom_reserve_iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49A3BDC121B235BB00123F30;
+			productRefGroup = 49A3BDCB21B235BB00123F30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49A3BDC921B235BB00123F30 /* meetingroom_reserve_iOS */,
+				49A3BDE121B235BD00123F30 /* meetingroom_reserve_iOSTests */,
+				49A3BDEC21B235BD00123F30 /* meetingroom_reserve_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49A3BDC821B235BB00123F30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A3BDDA21B235BD00123F30 /* LaunchScreen.storyboard in Resources */,
+				49A3BDD721B235BD00123F30 /* Assets.xcassets in Resources */,
+				49A3BDD521B235BB00123F30 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3BDE021B235BD00123F30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3BDEB21B235BD00123F30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49A3BDC621B235BB00123F30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
+				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
+				49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3BDDE21B235BD00123F30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A3BDE721B235BD00123F30 /* meetingroom_reserve_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3BDE921B235BD00123F30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A3BDF221B235BD00123F30 /* meetingroom_reserve_iOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49A3BDE421B235BD00123F30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49A3BDC921B235BB00123F30 /* meetingroom_reserve_iOS */;
+			targetProxy = 49A3BDE321B235BD00123F30 /* PBXContainerItemProxy */;
+		};
+		49A3BDEF21B235BD00123F30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49A3BDC921B235BB00123F30 /* meetingroom_reserve_iOS */;
+			targetProxy = 49A3BDEE21B235BD00123F30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49A3BDD321B235BB00123F30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A3BDD421B235BB00123F30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49A3BDD821B235BD00123F30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A3BDD921B235BD00123F30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49A3BDF421B235BD00123F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49A3BDF521B235BD00123F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49A3BDF721B235BD00123F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZPEDND434;
+				INFOPLIST_FILE = meetingroom_reserve_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zwx.meetingroom-reserve-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49A3BDF821B235BD00123F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZPEDND434;
+				INFOPLIST_FILE = meetingroom_reserve_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zwx.meetingroom-reserve-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		49A3BDFA21B235BD00123F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZPEDND434;
+				INFOPLIST_FILE = meetingroom_reserve_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zwx.meetingroom-reserve-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetingroom_reserve_iOS.app/meetingroom_reserve_iOS";
+			};
+			name = Debug;
+		};
+		49A3BDFB21B235BD00123F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZPEDND434;
+				INFOPLIST_FILE = meetingroom_reserve_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zwx.meetingroom-reserve-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetingroom_reserve_iOS.app/meetingroom_reserve_iOS";
+			};
+			name = Release;
+		};
+		49A3BDFD21B235BD00123F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZPEDND434;
+				INFOPLIST_FILE = meetingroom_reserve_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zwx.meetingroom-reserve-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = meetingroom_reserve_iOS;
+			};
+			name = Debug;
+		};
+		49A3BDFE21B235BD00123F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZPEDND434;
+				INFOPLIST_FILE = meetingroom_reserve_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "zwx.meetingroom-reserve-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = meetingroom_reserve_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49A3BDC521B235BB00123F30 /* Build configuration list for PBXProject "meetingroom_reserve_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A3BDF421B235BD00123F30 /* Debug */,
+				49A3BDF521B235BD00123F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A3BDF621B235BD00123F30 /* Build configuration list for PBXNativeTarget "meetingroom_reserve_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A3BDF721B235BD00123F30 /* Debug */,
+				49A3BDF821B235BD00123F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A3BDF921B235BD00123F30 /* Build configuration list for PBXNativeTarget "meetingroom_reserve_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A3BDFA21B235BD00123F30 /* Debug */,
+				49A3BDFB21B235BD00123F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A3BDFC21B235BD00123F30 /* Build configuration list for PBXNativeTarget "meetingroom_reserve_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A3BDFD21B235BD00123F30 /* Debug */,
+				49A3BDFE21B235BD00123F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49A3BDC221B235BB00123F30 /* Project object */;
+}
