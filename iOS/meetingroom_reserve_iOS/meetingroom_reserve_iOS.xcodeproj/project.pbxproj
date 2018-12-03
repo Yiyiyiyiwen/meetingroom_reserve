@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FBE21B506E4004836D3 /* SignInVC.m */; };
+		490A4FC521B509A9004836D3 /* SignInNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FC421B509A9004836D3 /* SignInNav.m */; };
 		49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDCE21B235BB00123F30 /* AppDelegate.m */; };
 		49A3BDD521B235BB00123F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD321B235BB00123F30 /* Main.storyboard */; };
 		49A3BDD721B235BD00123F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD621B235BD00123F30 /* Assets.xcassets */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490A4FBD21B506E4004836D3 /* SignInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
+		490A4FBE21B506E4004836D3 /* SignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
+		490A4FC321B509A9004836D3 /* SignInNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNav.h; sourceTree = "<group>"; };
+		490A4FC421B509A9004836D3 /* SignInNav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNav.m; sourceTree = "<group>"; };
 		49A3BDCA21B235BB00123F30 /* meetingroom_reserve_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetingroom_reserve_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A3BDCD21B235BB00123F30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49A3BDCE21B235BB00123F30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,6 +87,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490A4FB621B50654004836D3 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				490A4FB721B50667004836D3 /* Models */,
+				490A4FB821B50670004836D3 /* Views */,
+				490A4FB921B5067F004836D3 /* Controllers */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		490A4FB721B50667004836D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		490A4FB821B50670004836D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		490A4FB921B5067F004836D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				490A4FBD21B506E4004836D3 /* SignInVC.h */,
+				490A4FBE21B506E4004836D3 /* SignInVC.m */,
+				490A4FC321B509A9004836D3 /* SignInNav.h */,
+				490A4FC421B509A9004836D3 /* SignInNav.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		49A3BDC121B235BB00123F30 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +145,7 @@
 		49A3BDCC21B235BB00123F30 /* meetingroom_reserve_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				490A4FB621B50654004836D3 /* SignIn */,
 				49A3BDFF21B25AFF00123F30 /* LogIn */,
 				49A3BDCD21B235BB00123F30 /* AppDelegate.h */,
 				49A3BDCE21B235BB00123F30 /* AppDelegate.m */,
@@ -301,8 +343,10 @@
 			files = (
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
+				490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */,
 				49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */,
 				49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */,
+				490A4FC521B509A9004836D3 /* SignInNav.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZPEDND434;
 				INFOPLIST_FILE = meetingroom_reserve_iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,7 +538,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZPEDND434;
 				INFOPLIST_FILE = meetingroom_reserve_iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,6 +8,7 @@
 
 #import "LogInVC.h"
 #import "UIImage+XG.h"
+#import "SignInNav.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface LogInVC ()
@@ -22,17 +23,18 @@
     [self UISetting];
 }
 
+//UI布局
 - (void) UISetting{
     //背景图片
     UIImage *backgroundImage = [UIImage imageNamed:@"backgroundImage"];
     self.backgroundView.layer.contents = (id)backgroundImage.CGImage;
     //头像
-    UIImageView *headImgView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.1, SCREEN_WIDTH*0.15, SCREEN_WIDTH*0.15)];
+    UIImageView *headImgView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.1, SCREEN_WIDTH*0.15, SCREEN_WIDTH*0.15)];
     UIImage_XG * headImg = [UIImage_XG imageWithIconName:@"headImage" borderImage:@"" border:0];
     headImgView.image = headImg;
     [self.view addSubview:headImgView];
     //欢迎文字
-    UILabel *welcome = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.2, SCREEN_WIDTH*0.3, SCREEN_HEIGHT*0.1)];
+    UILabel *welcome = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.2, SCREEN_WIDTH*0.3, SCREEN_HEIGHT*0.1)];
     welcome.text = @"Hello!\n欢迎回来";
     welcome.numberOfLines = 0;
     welcome.textAlignment = NSTextAlignmentLeft;
@@ -40,12 +42,12 @@
     welcome.textColor = [UIColor whiteColor];
     [self.view addSubview:welcome];
     //手机号输入
-    UILabel *tel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.3, SCREEN_WIDTH*0.2, SCREEN_WIDTH*0.1)];
+    UILabel *tel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.3, SCREEN_WIDTH*0.2, SCREEN_WIDTH*0.1)];
     tel.textColor = [UIColor whiteColor];
     tel.text = @"手机号码";
     tel.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:tel];
-    UIView *telNumView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.35, SCREEN_WIDTH*0.8, SCREEN_HEIGHT*0.07)];
+    UIView *telNumView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.35, SCREEN_WIDTH*0.9, SCREEN_HEIGHT*0.07)];
     telNumView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:142.0/255.0 blue:153.0/255.0 alpha:0.6];
     telNumView.layer.borderWidth = 1;
     telNumView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
@@ -69,12 +71,12 @@
     telNumTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;
     [telNumView addSubview:telNumTextfield];
     //密码
-    UILabel *pwdLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.42, SCREEN_WIDTH*0.1, SCREEN_WIDTH*0.1)];
+    UILabel *pwdLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.42, SCREEN_WIDTH*0.1, SCREEN_WIDTH*0.1)];
     pwdLabel.textColor = [UIColor whiteColor];
     pwdLabel.text = @"密码";
     pwdLabel.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:pwdLabel];
-    UIView *pwdView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.47, SCREEN_WIDTH*0.8, SCREEN_HEIGHT*0.07)];
+    UIView *pwdView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.47, SCREEN_WIDTH*0.9, SCREEN_HEIGHT*0.07)];
     pwdView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:142.0/255.0 blue:153.0/255.0 alpha:0.6];
     pwdView.layer.borderWidth = 1;
     pwdView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
@@ -89,7 +91,7 @@
     pwdTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;
     [pwdView addSubview:pwdTextfield];
     //登录按钮
-    UIView *loginView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.6, SCREEN_WIDTH*0.8, SCREEN_HEIGHT*0.07)];
+    UIView *loginView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.6, SCREEN_WIDTH*0.9, SCREEN_HEIGHT*0.07)];
     loginView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:142.0/255.0 blue:153.0/255.0 alpha:0.6];
     loginView.layer.borderWidth = 1;
     loginView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
@@ -104,7 +106,8 @@
     [loginView addSubview:loginLabel];
     //忘记密码
     UIButton *forgetPwd = [UIButton buttonWithType:UIButtonTypeCustom];
-    forgetPwd.frame = CGRectMake(SCREEN_WIDTH*0.1, SCREEN_HEIGHT*0.7, SCREEN_WIDTH*0.2, SCREEN_WIDTH*0.1);
+    forgetPwd.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.7, SCREEN_WIDTH*0.2, SCREEN_WIDTH*0.1);
+    forgetPwd.titleLabel.textAlignment = NSTextAlignmentLeft;
     [forgetPwd setTitle:@"忘记密码" forState:UIControlStateNormal];
     [forgetPwd setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     forgetPwd.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -122,7 +125,9 @@
 
 //新用户注册
 - (void) signin{
-    NSLog(@"新用户注册");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    SignInNav *signVC = [sb instantiateViewControllerWithIdentifier:@"signInNav"];
+    [self presentViewController:signVC animated:YES completion:nil];
 }
 
 //忘记密码
