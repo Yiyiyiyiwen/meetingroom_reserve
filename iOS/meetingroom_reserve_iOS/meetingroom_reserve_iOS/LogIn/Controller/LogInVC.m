@@ -10,6 +10,7 @@
 #import "UIImage+XG.h"
 #import "SignInNav.h"
 #import "ForgetPwdNav.h"
+#import "ReserveTabbarController.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface LogInVC ()
@@ -84,15 +85,18 @@
     [self.view addSubview:pwdView];
     //密码输入框
     UITextField *pwdTextfield = [[UITextField alloc]initWithFrame:CGRectMake(pwdView.frame.size.width*0.05, 0, pwdView.frame.size.width*0.9, pwdView.frame.size.height)];
+    pwdTextfield.tag = 2;
     pwdTextfield.textColor = [UIColor whiteColor];
     pwdTextfield.tintColor = [UIColor whiteColor];
     pwdTextfield.keyboardType = UIKeyboardTypeAlphabet;
+    [pwdTextfield addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     pwdTextfield.placeholder = @"请输入密码";
     pwdTextfield.secureTextEntry = YES;
     pwdTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;
     [pwdView addSubview:pwdTextfield];
     //登录按钮
     UIView *loginView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.6, SCREEN_WIDTH*0.9, SCREEN_HEIGHT*0.07)];
+    loginView.tag = 3;
     loginView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:142.0/255.0 blue:153.0/255.0 alpha:0.6];
     loginView.layer.borderWidth = 1;
     loginView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
@@ -122,6 +126,17 @@
     signinBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [signinBtn addTarget:self action:@selector(signin) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:signinBtn];
+    //增加监听，当键盘出现或改变时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    //增加监听，当键退出时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 //新用户注册
@@ -140,13 +155,21 @@
 
 //登录
 - (void) login{
-    NSLog(@"登录");
+    UITextField *telNum = (UITextField *)[self.view  viewWithTag:1];
+    UITextField *pwd = (UITextField *)[self.view viewWithTag:2];
+    if ([telNum.text isEqualToString:@"13813968440"]&&[pwd.text isEqualToString:@"1"]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
+        [self presentViewController:reserveTabbarController animated:YES completion:nil];
+    }
 }
 
 //电话键盘监听
 - (void)textFieldDidChange:(UITextField *)textField{
-    if (textField.text.length >= 11) {
-        textField.text = [textField.text substringToIndex:11];
+    if (textField.tag == 1) {
+        if (textField.text.length >= 11) {
+            textField.text = [textField.text substringToIndex:11];
+        }
     }
 }
 
@@ -155,4 +178,27 @@
     [self.view endEditing:YES];
 }
 
+//当键盘出现或改变时调用
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    int height = keyboardRect.size.height;
+    UIView *login = [self.view viewWithTag:3];
+    CGRect frame = login.frame;
+    int offSet = frame.origin.y + 70 - (self.view.frame.size.height - height);
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:0.5f];
+    if (offSet > 0) {
+        self.view.frame = CGRectMake(0.0f, -offSet, self.view.frame.size.width, self.view.frame.size.height);
+        [UIView commitAnimations];
+    }
+}
+
+//当键退出时调用
+- (void)keyboardWillHide:(NSNotification *)aNotification{
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
 @end
