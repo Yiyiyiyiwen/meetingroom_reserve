@@ -9,6 +9,7 @@
 #import "LogInVC.h"
 #import "UIImage+XG.h"
 #import "SignInNav.h"
+#import "ForgetPwdNav.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface LogInVC ()
@@ -132,7 +133,9 @@
 
 //忘记密码
 - (void) forget{
-    NSLog(@"忘记密码");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    ForgetPwdNav *forPwdNav = [sb instantiateViewControllerWithIdentifier:@"forgetPwdNav"];
+    [self presentViewController:forPwdNav animated:YES completion:nil];
 }
 
 //登录
