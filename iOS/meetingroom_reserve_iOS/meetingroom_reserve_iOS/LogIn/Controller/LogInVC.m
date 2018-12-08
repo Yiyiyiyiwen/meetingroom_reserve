@@ -157,7 +157,7 @@
 - (void) login{
     UITextField *telNum = (UITextField *)[self.view  viewWithTag:1];
     UITextField *pwd = (UITextField *)[self.view viewWithTag:2];
-    if ([telNum.text isEqualToString:@"13813968440"]&&[pwd.text isEqualToString:@"1"]) {
+    if ([telNum.text isEqualToString:@"1"]&&[pwd.text isEqualToString:@"1"]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
         [self presentViewController:reserveTabbarController animated:YES completion:nil];
