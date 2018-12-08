@@ -11,7 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MeetingVC : UIViewController
-
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UISearchController *searchController;
+// 数据源数组
+@property (nonatomic, strong) NSMutableArray *datas;
+// 搜索结果数组
+@property (nonatomic, strong) NSMutableArray *results;
 @end
 
 NS_ASSUME_NONNULL_END
