@@ -1,0 +1,47 @@
+.top{
+    width: 100%;
+    background: #337ab7;
+    color: white;
+    padding: 15px 10px;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+}
+.top img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.active{
+    background: #337ab7;
+}
+.content{
+    width: 100%;
+}
+.nav li{
+    padding: 5px 0;
+}
+.list-group{
+    padding:0;
+    margin:20px 40px;
+}
+.col-md-6{
+    padding: 0;
+    margin: 0;
+}
+.item{
+    height: 400px;
+}
+.item img{
+    height: 400px!important;
+    width: 100%;
+}
+.carousel-control{
+    background:rgba(0, 0, 0, 0)!important;
+    display: flex;
+    align-items: center;
+    width: 10px;
+    color: black;
+    font-size: 40px;
+    padding: 0 50px;
+}
