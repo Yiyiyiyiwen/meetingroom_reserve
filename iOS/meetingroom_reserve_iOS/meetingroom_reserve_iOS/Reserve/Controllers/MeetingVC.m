@@ -63,6 +63,7 @@
     self.tableView.tableFooterView = [[UIView alloc]init];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.title = @"会议";
     UITabBarItem *item0 = [self.tabBarController.tabBar.items objectAtIndex:0];
     UITabBarItem *item1 = [self.tabBarController.tabBar.items objectAtIndex:1];
@@ -96,14 +97,26 @@
         cell.title.text = [self.results objectAtIndex:indexPath.row];
     } else {
         cell.title.text = [self.datas objectAtIndex:indexPath.row];
-        cell.details.text = @"asdafd";
-        cell.image.image = [UIImage imageNamed:@"会议选中"];
+        if (indexPath.row == 0) {
+            cell.image.image = [UIImage imageNamed:@"日历"];
+        }
+        if (indexPath.row == 1) {
+            cell.image.image = [UIImage imageNamed:@"会议"];
+        }
+        if (indexPath.row == 2) {
+            cell.details.text = @"1、xxxxxxx\n2、xxxxxxx\n3、xxxxxxx";
+            cell.details.numberOfLines = 0;
+            cell.image.image = [UIImage imageNamed:@"通知"];
+        }
+//        cell.details.text = @"asdafd";
+//        cell.image.image = [UIImage imageNamed:@"会议选中"];
         cell.contentView.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:229/255.0 blue:234/255.0 alpha:1.0];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.searchController.active) {
         NSLog(@"选择了搜索结果中的%@", [self.results objectAtIndex:indexPath.row]);
     } else {
@@ -112,7 +125,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT*0.15;
+    if (indexPath.row >= 0 && indexPath.row <= 2) {
+        return SCREEN_HEIGHT*0.15;
+    }else{
+        return 0;
+    }
 }
 
 

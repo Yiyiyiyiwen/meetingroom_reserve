@@ -47,6 +47,7 @@
 }
 
 - (void) initUI{
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UISearchController *searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
     // 设置结果更新代理
     searchController.searchResultsUpdater = self;
@@ -83,14 +84,15 @@
         cell.textLabel.text = [self.results objectAtIndex:indexPath.row];
     } else {
         cell.title.text = [self.datas objectAtIndex:indexPath.row];
-        cell.details.text = @"asdafd";
-        cell.image.image = [UIImage imageNamed:@"会议选中"];
+//        cell.details.text = @"asdafd";
+//        cell.image.image = [UIImage imageNamed:@"会议选中"];
         cell.contentView.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:229/255.0 blue:234/255.0 alpha:1.0];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.searchController.active) {
         NSLog(@"选择了搜索结果中的%@", [self.results objectAtIndex:indexPath.row]);
     } else {
@@ -99,7 +101,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT*0.15;
+    if (indexPath.row >= 0 && indexPath.row <= 1) {
+        return SCREEN_HEIGHT*0.15;
+    }else{
+        return 0;
+    }
 }
 
 #pragma mark - UISearchResultsUpdating

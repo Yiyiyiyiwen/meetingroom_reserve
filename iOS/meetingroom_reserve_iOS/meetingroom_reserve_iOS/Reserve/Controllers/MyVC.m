@@ -50,6 +50,7 @@
 }
 
 - (void) initUI{
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT*0.13, SCREEN_WIDTH, SCREEN_HEIGHT*0.33)];
     [self.view addSubview:topView];
     //头像
