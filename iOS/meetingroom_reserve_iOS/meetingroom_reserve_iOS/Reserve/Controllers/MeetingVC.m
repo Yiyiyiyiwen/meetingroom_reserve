@@ -7,7 +7,9 @@
 //
 
 #import "MeetingVC.h"
-
+#import "MyCell.h"
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface MeetingVC ()<UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating>
 
 @end
@@ -27,7 +29,7 @@
 - (NSMutableArray *)datas {
     if (_datas == nil) {
         _datas = [NSMutableArray arrayWithCapacity:0];
-        NSArray *arr = [[NSArray alloc]initWithObjects:@"111",@"测试2",@"测试3",@"测试3",@"测试4",@"测试5",@"测试6", nil];
+        NSArray *arr = [[NSArray alloc]initWithObjects:@"日历",@"会议日程",@"通知", nil];
         [self.datas addObjectsFromArray:arr];
     }
     return _datas;
@@ -56,7 +58,11 @@
         self.navigationController.navigationBar.prefersLargeTitles = YES;
     } else {
     }
+    self.view.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:229/255.0 blue:234/255.0 alpha:1.0];
     self.tableView.tableHeaderView = searchController.searchBar;
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.navigationItem.title = @"会议";
     UITabBarItem *item0 = [self.tabBarController.tabBar.items objectAtIndex:0];
     UITabBarItem *item1 = [self.tabBarController.tabBar.items objectAtIndex:1];
@@ -81,15 +87,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    MyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
+        cell = [[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell"];
     }
     // 这里通过searchController的active属性来区分展示数据源是哪个
     if (self.searchController.active ) {
-        cell.textLabel.text = [self.results objectAtIndex:indexPath.row];
+        cell.title.text = [self.results objectAtIndex:indexPath.row];
     } else {
-        cell.textLabel.text = [self.datas objectAtIndex:indexPath.row];
+        cell.title.text = [self.datas objectAtIndex:indexPath.row];
+        cell.details.text = @"asdafd";
+        cell.image.image = [UIImage imageNamed:@"会议选中"];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:229/255.0 blue:234/255.0 alpha:1.0];
     }
     return cell;
 }
@@ -101,6 +110,12 @@
         NSLog(@"选择了列表中的%@", [self.datas objectAtIndex:indexPath.row]);
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return SCREEN_HEIGHT*0.15;
+}
+
+
 
 #pragma mark - UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {

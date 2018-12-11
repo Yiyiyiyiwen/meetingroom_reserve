@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FBE21B506E4004836D3 /* SignInVC.m */; };
 		490A4FC521B509A9004836D3 /* SignInNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FC421B509A9004836D3 /* SignInNav.m */; };
+		49402CE421BD02A0004F9CCE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49402CE321BD02A0004F9CCE /* MyCell.m */; };
 		4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7B721BB4A9100041205 /* ForgetPwdVC.m */; };
 		4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7BA21BB4AAA00041205 /* ForgetPwdNav.m */; };
 		4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7C121BB4F0000041205 /* ReserveTabbarController.m */; };
@@ -48,6 +49,8 @@
 		490A4FBE21B506E4004836D3 /* SignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 		490A4FC321B509A9004836D3 /* SignInNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNav.h; sourceTree = "<group>"; };
 		490A4FC421B509A9004836D3 /* SignInNav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNav.m; sourceTree = "<group>"; };
+		49402CE221BD02A0004F9CCE /* MyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		49402CE321BD02A0004F9CCE /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 		4990B7B621BB4A9100041205 /* ForgetPwdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdVC.h; sourceTree = "<group>"; };
 		4990B7B721BB4A9100041205 /* ForgetPwdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdVC.m; sourceTree = "<group>"; };
 		4990B7B921BB4AAA00041205 /* ForgetPwdNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdNav.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 		4990B7BE21BB4ED100041205 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49402CE221BD02A0004F9CCE /* MyCell.h */,
+				49402CE321BD02A0004F9CCE /* MyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
 				4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */,
+				49402CE421BD02A0004F9CCE /* MyCell.m in Sources */,
 				490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */,
 				49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */,
 				4990B7C521BB591200041205 /* MeetingVC.m in Sources */,

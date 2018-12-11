@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyVC : UIViewController
-
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *datas;
 @end
 
 NS_ASSUME_NONNULL_END
