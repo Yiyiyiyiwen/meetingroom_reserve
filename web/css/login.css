@@ -3,14 +3,14 @@ html,body{
     padding:0;
     width: 100%;
     height: 100%;
-    background-image: url('../resource/55ee947f08d06.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background: #d46634;
 }
 .login{
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
+    display: flex;
+    border-radius: 10px;
+    box-shadow:5px 10px 20px rgba(0, 0, 0, 0.5);
 }
 .all{
     width: 100%;
@@ -19,6 +19,60 @@ html,body{
     justify-content: center;
     align-items: center;
 }
+
+@font-face {
+    font-family: 'AdobeGothicStd-Bold';
+    src: url('/resource/font/AdobeGothicStd-Bold.otf');
+   } 
+   @font-face {
+    font-family: 'zhanghaishan';
+    src: url('/resource/font/zhs.ttf');
+   } 
+   @font-face {
+    font-family: 'SIMYOU';
+    src: url('/resource/font/SIMYOU.TTF');
+   }    
+   @font-face {
+    font-family: 'FZLTHJW';
+    src: url('/resource/font/FZLTHJW.TTF');
+   } 
+.left{
+    width: 450px;
+    height: auto;
+    font-family: AdobeGothicStd-Bold;
+    background-image: url('/resource/bg.png');
+    background-size: cover;
+    z-index: 1;
+}
+.leftin{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.tra{
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+.tra img{
+    width: 70px;
+}
+.right{
+    background: #1d1d22;
+    color: white;
+    position: relative;
+    z-index: 0;
+    animation:move 2s;
+    padding: 150px 80px 150px 60px;
+    font-family: FZLTHJW;
+}
+@keyframes move
+{
+	0% {left: -100%;}
+	100% {left: 0px;}
+}
+
 .register{
     width: 100%;
     display: flex;
@@ -27,14 +81,21 @@ html,body{
     align-items: center;
     margin-bottom: 20px;
 }
-.login img{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px white solid;
+input{
+   border-top: 1px #1d1d22 solid !important;
+   border-left: 1px #1d1d22 solid !important;
+   border-right: 1px #1d1d22 solid !important;
+   background: #1d1d1d!important;
+   border-radius: 0!important;
+   border-bottom: 1px #eee solid!important;
 }
+input:hover,input:active{
+    border: 0!important;
+    border-bottom: 1px #eee solid!important;
+}
+
 .myinput{
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,24 +105,58 @@ html,body{
     margin-right: 10px;
 }
 .top{
-    margin-top: 20px;
+    margin-top: 40px;
+    letter-spacing: 0.2em;
+    font-size: 18px;
 }
-.passwordinput{
-    margin-top: 10px;
-}
-.btn{
+
+.mybutton{
     margin-top: 30px;
+    width: 120px;
+    border-radius: 40px;
+    border: 1px #bbb solid;
+    background: #1d1d1d;
+    height: 40px;
+    margin-top: 50px;
 }
 .input-lg{
     width: 350px;
 }
 .forget{
-    margin-top: 10px;
+    margin-top: 15px;
+    color: #bbb;
 }
 .title{
-    font-size: 30px;
+    font-size: 28px;
+    color: #4cd2fc;
 }
 a:hover,a:link,a:visited,a:active{
     color: white;
     text-decoration: none;
+}
+.btn{
+    background: #4cd2fc;
+}
+.logintext{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transform:rotate(90deg);
+    letter-spacing:0.6em;
+    position: absolute;
+    top:30%;
+    left: -15%;
+}
+.logintext2{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transform:rotate(90deg);
+    letter-spacing:0.6em;
+    position: absolute;
+    top:42%;
+    left: -35%;
+}
+.left{
+    position: relative;
 }

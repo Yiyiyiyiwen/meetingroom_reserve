@@ -30,10 +30,10 @@
     margin: 0;
 }
 .item{
-    height: 400px;
+    height: 500px;
 }
 .item img{
-    height: 400px!important;
+    height: 500px!important;
     width: 100%;
 }
 .carousel-control{

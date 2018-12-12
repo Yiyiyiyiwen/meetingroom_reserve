@@ -14,17 +14,25 @@
 <body>
     <div class="all">
         <div class="login">
-            <div class="title">请输入验证码</div>
-            <div class="top">
-                <span>验证码已发送至手机：+86</span>
-                <span id="phone"></span>
+            <div class="left" style="width:150px">
+                <div class="leftin">
+                    <div class="logintext2" style="font-size:25px">REGISTER</div>
+                </div>
             </div>
-            <div class="myinput">
-                <input type="number" class="form-control input-lg" id="name" placeholder="请输入验证码">
-            </div>
-            <div class="top">重发验证码</div>
-            <button type="button" class="btn btn-info btn-lg btn-block" onclick="next()">下一步</button>
+            <div class="right">
+                    <div class="title">请输入验证码</div>
+                    <div class="top">
+                        <span>验证码已发送至手机：+86</span>
+                        <span id="phone"></span>
+                    </div>
+                    <div class="myinput">
+                        <input type="number" class="form-control input-lg" id="name" placeholder="请输入验证码">
+                    </div>
+                    <div class="top">重发验证码</div>
+                    <button type="button" class="btn btn-info btn-lg btn-block" onclick="next()">下一步</button>
+                </div>
         </div>
+        
     </div>
     </div>
 
@@ -38,10 +46,12 @@
         var myinput = decodeURI(loc.substr(n2 + 1, n1 - n2));//从=号后面的内容
         console.log(myinput)
         $("#phone").html(myinput)
-        
-        function next(){
-            window.location.href="meeting.html"
+
+        function next() {
+            window.location.href = "meeting.html"
         }
+
+
     </script>
 </body>
 
