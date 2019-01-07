@@ -1,6 +1,4 @@
-*[class*="fontawesome-"]:before {
-    font-family: 'FontAwesome', sans-serif;
-}
+
 
 /*body {
     background: #f9f9f9;
@@ -28,6 +26,7 @@ h3 {
 table {
     border-spacing: 0;
     width: 100%;
+    
 }
 
 .calendar-container {
@@ -37,6 +36,7 @@ table {
 
 .calendar {
     text-align: center;
+    background: #eee;
 }
 
 .calendar header {
@@ -152,17 +152,15 @@ label span{
     color: #A4AAAB;
     margin-top: -15px;
     margin-right: 10px;
-    float: right;
 }
 
 .day-event {
-    background-color: #F2F2F2 ;
+    background-color: #eee ;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 0px;
     margin-bottom: 50px;
     display:none;
-
 }
 
 .day-event p{

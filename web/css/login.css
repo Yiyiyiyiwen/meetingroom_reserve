@@ -5,7 +5,7 @@ html,body{
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/resource/StockSnap_O6ZKFPOHXN.jpg');
+    background-image: url('/resource/StockSnap_KGSTJH2CB7.jpg');
 }
 .login{
     display: flex;
@@ -17,7 +17,6 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
 }
 
 @font-face {
@@ -59,10 +58,11 @@ html,body{
     width: 70px;
 }
 .right{
-    background: white;
     position: relative;
     z-index: 0;
     animation:move 1s;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
     padding: 120px 60px 120px 60px;
     font-family: FZLTHJW;
     box-shadow:5px 10px 20px rgba(0, 0, 0, 0.5);
@@ -82,12 +82,15 @@ html,body{
     align-items: center;
     margin-bottom: 20px;
 }
+.register a{
+    color: white;
+}
 input{
-   border-top: 1px white solid !important;
-   border-left: 1px white solid !important;
-   border-right: 1px white solid !important;
    border-radius: 0!important;
-   border-bottom: 1px black solid!important;
+   background: transparent;
+   border: 0px!important;
+   color: white;
+   border-bottom: 1px white solid!important;
 }
 
 .myinput{
@@ -109,13 +112,15 @@ input{
     margin-top: 30px;
     width: 120px;
     border-radius: 40px;
-    border: 1px black solid;
-    background: white;
+    border: 1px white solid;
+    background: transparent;
     height: 40px;
     margin-top: 50px;
 }
 .mybutton:link,.mybutton:hover,.mybutton:active,.mybutton:visited,.mybutton:focus{
     border: 1px black solid!important;
+    background: white;
+    color: black;
 }
 .mybutton:focus{
 
@@ -125,13 +130,13 @@ input{
 }
 .forget{
     margin-top: 15px;
-    color: black;
+    color: white;
 }
 .title{
     font-size: 28px;
 }
 a:hover,a:link,a:visited,a:active{
-    color:black;
+    color:white;
     text-decoration: none;
 }
 

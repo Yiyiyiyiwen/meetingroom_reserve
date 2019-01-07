@@ -7,16 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>会议</title>
     <link rel="stylesheet" href="/css/default.css" type="text/css">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/tabs.css" type="text/css">
+    <link rel="stylesheet" href="/css/meeting.css" type="text/css">
 
 </head>
 
 <body>
     <div class="top">
-        <div><img src="resource/logo.png"></div>
+        <i class="fa fa-meetup"></i>&nbsp;
         <div>智能会议室预定系统</div>
+
+        <i class="fa fa-sign-out"></i>&nbsp;
     </div>
     <!-- <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
@@ -41,6 +45,9 @@
     <div class="content">
         <div class="navs">
             <div class="information">
+                    <h4 class="list-group-item-heading notetitle">
+                            <i class="fa fa-user-o"></i>&nbsp;个人资料
+                        </h4>
                 <div class="head">
                     <img src="/resource/wangnima.png">
                 </div>
@@ -48,22 +55,99 @@
                 <div class="describe">我是王尼玛我是王尼玛</div>
             </div>
             <ul class="nav nav-stacked">
-                <li class="active"><a href="#">Home</a></li>
-                <!-- 这里的active属性就是使得所在的li的背景色变为蓝色-->
-                <li><a href="#">SVN</a></li>
-                <li><a href="#">iOS</a></li>
-                <li><a href="#">VB.Net</a></li>
-                <li><a href="#">Java</a></li>
-                <li><a href="#">PHP</a></li>
-                </ul>
+                <li class="active"><a href="/meeting.html"><i class="fa fa-home fa-lg"></i>&nbsp;主页</a></li>
+                <li><a href="/reserve.html"><i class="fa fa-check-square-o"></i>&nbsp;预定</a></li>
+                <li><a href="/data.html"><i class="fa fa-line-chart"></i>&nbsp;会议室数据</a></li>
+                <li><a href="/my.html"><i class="fa fa-user-circle"></i>&nbsp;我的</a></li>
+            </ul>
         </div>
         <div class="content-left">
+            <div class="col-md-4 col-lg-3 note">
+                <div class="list-group">
+                    <h4 class="list-group-item-heading notetitle">
+                        <i class="fa fa-hand-paper-o"></i>&nbsp;会议笔记
+                    </h4>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            开会时间：
+                        </h4>
+                        <p class="list-group-item-text">
+                            2018/12/11
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会地点：
+                        </h4>
+                        <p class="list-group-item-text">
+                            实B-207
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会主题：
+                        </h4>
+                        <p class="list-group-item-text">
+                            关于如何xxxxx
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            笔记：
+                        </h4>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                系统将所有的资源按类型进行线性排队，并赋予不同的序号
+                            </p>
+                        </div>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                序号必须相对稳定，限制了新设备类型的增加；
+                            </p>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            开会时间：
+                        </h4>
+                        <p class="list-group-item-text">
+                            2018/12/14
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会地点：
+                        </h4>
+                        <p class="list-group-item-text">
+                            实B-212
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会主题：
+                        </h4>
+                        <p class="list-group-item-text">
+                            关于如何xxxxx
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            笔记：
+                        </h4>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                系统将所有的资源按类型进行线性排队，并赋予不同的序号
+                            </p>
+                        </div>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                序号必须相对稳定，限制了新设备类型的增加；
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
             <div class="col-md-4 col-lg-4" id="notify">
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">
+                    <h4 class="list-group-item-heading notetitle">
+                        <i class="fa fa-calendar-minus-o"></i>&nbsp;会议日程
+                    </h4>
+                    <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">
-                            会议日程
+                            2018/12/11
                         </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">
@@ -74,29 +158,21 @@
                         </p>
                     </a>
                     <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                2018/12/11
-                            </h4>
-                            <p class="list-group-item-text">
-                                去给老子开会
-                            </p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading">
-                                    2018/12/11
-                                </h4>
-                                <p class="list-group-item-text">
-                                    去给老子开会
-                                </p>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">
-                                        2018/12/11
-                                    </h4>
-                                    <p class="list-group-item-text">
-                                        去给老子开会
-                                    </p>
-                                </a>
+                        <h4 class="list-group-item-heading">
+                            2018/12/11
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            2018/12/11
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">
                             2018/12/12
@@ -106,12 +182,10 @@
                         </p>
                     </a>
                 </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h4 class="list-group-item-heading">
-                            会议通知
-                        </h4>
-                    </a>
+                <div class="list-group  meeting-notification">
+                    <h4 class="list-group-item-heading notetitle">
+                        <i class="fa fa-bell-o"></i>&nbsp;会议通知
+                    </h4>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">
                             会议地点修改
@@ -130,58 +204,13 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-lg-4 note">
-                    <div class="list-group">
-                            <a href="#" class="list-group-item active">
-                                <h4 class="list-group-item-heading">
-                                    会议日程
-                                </h4>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading">
-                                    2018/12/11
-                                </h4>
-                                <p class="list-group-item-text">
-                                    去给老子开会
-                                </p>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">
-                                        2018/12/11
-                                    </h4>
-                                    <p class="list-group-item-text">
-                                        去给老子开会
-                                    </p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                        <h4 class="list-group-item-heading">
-                                            2018/12/11
-                                        </h4>
-                                        <p class="list-group-item-text">
-                                            去给老子开会
-                                        </p>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                            <h4 class="list-group-item-heading">
-                                                2018/12/11
-                                            </h4>
-                                            <p class="list-group-item-text">
-                                                去给老子开会
-                                            </p>
-                                        </a>
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading">
-                                    2018/12/12
-                                </h4>
-                                <p class="list-group-item-text">
-                                    去给老子开会
-                                </p>
-                            </a>
-                        </div>
-                </div>
-            <div class="col-md-5 col-lg-4">
+
+            <div class="col-md-4 col-lg-4">
                 <div class="calendar-container">
                     <div class="calendar">
+                        <h4 class="list-group-item-heading notetitle">
+                            <i class="fa fa-envelope-open-o"></i>&nbsp;注意事項
+                        </h4>
                         <header>
                             <h2 class="month"></h2>
                             <div class="btn-prev " href="#">&lsaquo;</div>
@@ -248,7 +277,8 @@
                                 <a href="#" class="close fontawesome-remove"></a>
                                 <h2 class="title">Lorem ipsum 1</h2>
                                 <p class="date">2015-01-23</p>
-                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
                                     standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
                                     blandade dem för att göra ett provexemplar av en bok.</p>
                                 <label>
@@ -259,7 +289,8 @@
                                 <a href="#" class="close fontawesome-remove"></a>
                                 <h2 class="title">Lorem ipsum 2</h2>
                                 <p class="date">2015-01-23</p>
-                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
                                     standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
                                     blandade dem för att göra ett provexemplar av en bok.</p>
                                 <label>
@@ -270,7 +301,8 @@
                                 <a href="#" class="close fontawesome-remove"></a>
                                 <h2 class="title">Lorem ipsum 3</h2>
                                 <p class="date">2015-01-23</p>
-                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
                                     standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
                                     blandade dem för att göra ett provexemplar av en bok.</p>
                                 <label>
@@ -281,7 +313,8 @@
                                 <a href="#" class="close fontawesome-remove"></a>
                                 <h2 class="title">Lorem ipsum 4</h2>
                                 <p class="date">2015-01-23</p>
-                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
                                     standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
                                     blandade dem för att göra ett provexemplar av en bok.</p>
                                 <label>
@@ -292,7 +325,8 @@
                                 <a href="#" class="close fontawesome-remove"></a>
                                 <h2 class="title">Lorem ipsum 5</h2>
                                 <p class="date">2015-01-23</p>
-                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
                                     standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
                                     blandade dem för att göra ett provexemplar av en bok.</p>
                                 <label>
@@ -303,7 +337,8 @@
                                 <a href="#" class="close fontawesome-remove"></a>
                                 <h2 class="title">Lorem ipsum 6</h2>
                                 <p class="date">2014-12-31</p>
-                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
                                     standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
                                     blandade dem för att göra ett provexemplar av en bok.</p>
                                 <label>
@@ -315,12 +350,12 @@
                 </div>
             </div>
 
-            
+
         </div>
     </div>
-    
 
-    
+
+
 
 
     <script src="js/jquery-3.3.1.min.js"></script>
