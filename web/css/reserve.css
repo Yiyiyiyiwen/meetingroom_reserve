@@ -186,7 +186,8 @@
     padding-left: 10px;
   }
   .myform{
-    margin: 20px;
+    padding: 20px;
+    background: white;
   }
   .glyphicon-ok:before {
     content: "√";
@@ -197,4 +198,8 @@
 .add{
   position: absolute;
   right: 5%;
+}
+.submit-reserve{
+  width: 100%;
+  background: #6d88cb;
 }

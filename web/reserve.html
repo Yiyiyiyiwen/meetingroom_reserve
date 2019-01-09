@@ -43,6 +43,92 @@
             </ul>
         </div>
         <div class="content-left col-md-12 col-lg-12">
+                <div class="doreserce col-md-5 col-lg-4">
+                        <div class="list-group">
+                            <h4 class="list-group-item-heading notetitle">
+                                <i class="fa fa-hand-paper-o"></i>&nbsp;我要预定
+                            </h4>
+                            <form role="form" class="myform">
+        
+                                <div class="form-group">
+                                    <label for="name">开始时间</label>
+                                    <input type="text" id="startdatetimepicker" class="form-control" data-date-format="yyyy-mm-dd hh:ii">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">结束时间</label>
+                                    <input type="text" id="enddatetimepicker" class="form-control" data-date-format="yyyy-mm-dd hh:ii">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">开会地点</label>
+                                    <select class="form-control">
+                                        <option>实B-207</option>
+                                        <option>实B-315</option>
+                                        <option>实B-212</option>
+                                        <option>实B-103</option>
+                                        <option>实B-317</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">开会人数</label>
+                                    <input type="text" class="form-control" placeholder="请输入开会人数">
+                                </div>
+                                <div class="form-group">
+                                    <div class="add-device">
+                                        <label for="name">设备资源</label>
+                                        <button type="button" class="btn btn-default btn-xs add">添加设备组合</button>
+                                    </div>
+                                    <select class="form-control">
+                                        <option selected>您尚未添加设备组合</option>
+                                    </select>
+                                    <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple
+                                        data-live-search="false">
+                                        <option>投影仪</option>
+                                        <option>笔记本电脑</option>
+                                        <option>功率放大器</option>
+                                        <option>无线麦接收器</option>
+                                        <option>云台摄影头</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="add-device">
+                                        <label for="name">开会人员</label>
+                                        <button type="button" class="btn btn-default btn-xs add">添加人员组合</button>
+                                    </div>
+                                    <select class="form-control">
+                                        <option selected>您尚未添加人员组合</option>
+                                    </select>
+                                    <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple
+                                        data-live-search="false">
+                                        <option>aaa</option>
+                                        <option>bbb</option>
+                                        <option>ccc</option>
+                                        <option>ddd</option>
+                                        <option>eee</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">会议类型</label>
+                                    <select class="form-control">
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">备注</label>
+                                    <textarea class="form-control" rows="3" placeholder="请输入备注"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="add-device">
+                                        <label for="name">附件</label>
+                                        <button type="button" class="btn btn-default btn-xs add">添加附件</button>
+                                    </div>
+                                </div>
+        
+                                <button type="button" class="btn btn-info submit-reserve">预定</button>
+                            </form>
+                        </div>
+                    </div>
             <div class="myreserve col-md-5 col-lg-8">
                 <article class="card">
                     <header class="card__thumb">
@@ -112,90 +198,7 @@
                 </article>
             </div>
 
-            <div class="doreserce col-md-5 col-lg-4">
-                <div class="list-group">
-                    <h4 class="list-group-item-heading notetitle">
-                        <i class="fa fa-hand-paper-o"></i>&nbsp;我要预定
-                    </h4>
-                    <form role="form" class="myform">
-
-                        <div class="form-group">
-                            <label for="name">开始时间</label>
-                            <input type="text" id="startdatetimepicker" class="form-control" data-date-format="yyyy-mm-dd hh:ii">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">结束时间</label>
-                            <input type="text" id="enddatetimepicker" class="form-control" data-date-format="yyyy-mm-dd hh:ii">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">开会地点</label>
-                            <select class="form-control">
-                                <option>实B-207</option>
-                                <option>实B-315</option>
-                                <option>实B-212</option>
-                                <option>实B-103</option>
-                                <option>实B-317</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">开会人数</label>
-                            <input type="text" class="form-control" placeholder="请输入开会人数">
-                        </div>
-                        <div class="form-group">
-                            <div class="add-device">
-                                <label for="name">设备资源</label>
-                                <button type="button" class="btn btn-default btn-xs add">添加设备组合</button>
-                            </div>
-                            <select class="form-control">
-                                <option selected>您尚未添加设备组合</option>
-                            </select>
-                            <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple
-                                data-live-search="false">
-                                <option>投影仪</option>
-                                <option>笔记本电脑</option>
-                                <option>功率放大器</option>
-                                <option>无线麦接收器</option>
-                                <option>云台摄影头</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="add-device">
-                                <label for="name">开会人员</label>
-                                <button type="button" class="btn btn-default btn-xs add">添加人员组合</button>
-                            </div>
-                            <select class="form-control">
-                                <option selected>您尚未添加人员组合</option>
-                            </select>
-                            <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple
-                                data-live-search="false">
-                                <option>aaa</option>
-                                <option>bbb</option>
-                                <option>ccc</option>
-                                <option>ddd</option>
-                                <option>eee</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">会议类型</label>
-                            <select class="form-control">
-                                <option>A</option>
-                                <option>B</option>
-                                <option>C</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">备注</label>
-                            <textarea class="form-control" rows="3" placeholder="请输入备注"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <div class="add-device">
-                                <label for="name">附件</label>
-                                <button type="button" class="btn btn-default btn-xs add">添加附件</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+           
         </div>
 
 
