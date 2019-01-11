@@ -1,6 +1,4 @@
-*[class*="fontawesome-"]:before {
-    font-family: 'FontAwesome', sans-serif;
-}
+
 
 /*body {
     background: #f9f9f9;
@@ -28,15 +26,17 @@ h3 {
 table {
     border-spacing: 0;
     width: 100%;
+    
 }
 
 .calendar-container {
-    width: 510px;
-	margin:40px auto 0 auto;
+    min-width: 510px;
+    margin: 20px 10px;
 }
 
 .calendar {
     text-align: center;
+    background: #eee;
 }
 
 .calendar header {
@@ -57,23 +57,23 @@ table {
 }
 
 .calendar tbody td:hover {
-    border: 2px solid #337ab7;
+    border: 2px solid #6d88cb;
 }
 
 .calendar tbody td.active {
-    border: 2px solid #337ab7;
-    color: #337ab7;
+    border: 2px solid #6d88cb;
+    color: #6d88cb;
     background: white;
 }
 .btn-prev,.btn-next {
     border: 0!important;
-    color: #337ab7!important;
+    color: #6d88cb!important;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .btn-prev:hover,.btn-next:hover{
-    background:#337ab7!important;
+    background:#6d88cb!important;
     color: white!important;
 }
 .calendar td {
@@ -87,7 +87,7 @@ table {
 }
 
 .current-day {
-    background: #337ab7;
+    background: #6d88cb;
     color: #f9f9f9;
 }
 
@@ -97,7 +97,7 @@ table {
 }
 
 .event:after {
-    background: #337ab7;
+    background: #546ba3;
     border-radius: 50%;
     bottom: 8px;
     display: block;
@@ -128,7 +128,7 @@ table {
 }
 label span{
     width: 500px!important;
-    background: #337ab7;
+    background: #6d88cb;
 }
 .btn-prev:hover,
 .btn-next:hover {
@@ -152,17 +152,15 @@ label span{
     color: #A4AAAB;
     margin-top: -15px;
     margin-right: 10px;
-    float: right;
 }
 
 .day-event {
-    background-color: #F2F2F2 ;
+    background-color: #eee ;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 0px;
     margin-bottom: 50px;
     display:none;
-
 }
 
 .day-event p{
@@ -185,12 +183,12 @@ label span{
     color: white;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    background: #337ab7;
+    background: #6d88cb;
     border: 0;
-    border-bottom: 2px solid #337ab7;
+    border-bottom: 2px solid #6d88cb;
     cursor: pointer;
-    -webkit-box-shadow: inset 0 -2px #337ab7;
-    box-shadow: inset 0 -2px #337ab7;
+    -webkit-box-shadow: inset 0 -2px #6d88cb;
+    box-shadow: inset 0 -2px #6d88cb;
 }
 
 .check-btn {

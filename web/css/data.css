@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'SIMYOU';
+    src: url('/resource/font/SIMYOU.TTF');
+   }    
+.dataprocess{
+    width: 100%;
+    padding-left: 100px;
+}
+.showdata-left{
+    display: flex;
+    padding: 0 50px;
+}
+.c{
+    margin-left: 50px;
+}
+.circletitle{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5px;
+    font-family: mengna;
+
+}
+
+.list-group-item{
+    background: #eee;
+    padding: 30px 15px;
+    padding-bottom: 10px;
+}
+.chooseroom{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+.input-group{
+    width: 300px;
+    margin-left: 20px;
+}
+.caret{
+    color: #6d88cb;
+}
+.showdata{
+    display: flex;
+}
+.notetitle{
+    padding: 0 10px;
+}
+.person-circle{
+    width: 200px;
+    height: 200px;
+    background: rgb(236, 88, 113);
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.pm{
+    margin-top: 40px;
+    background: rgb(223, 152, 94);
+    animation: changecolor 5s;
+    -webkit-animation: changecolor 5s;
+}
+.countani{
+    animation: changecolo2 5s;
+    -webkit-animation: changecolor2 5s;
+}
+@keyframes changecolor{
+    from{background:rgb(228, 125, 142) }
+    to{background: rgb(223, 152, 94)}
+}
+@keyframes changecolor2{
+    from{background:rgb(233, 169, 116) }
+    to{background: rgb(236, 88, 113)}
+}
+.dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: white;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.person-count{
+    color: white;
+    font-size: 60px;
+    font-family: mengna;
+}
+.person-count span{
+    font-size: 20px;
+}
+.personcount{
+    margin-left: 50px;
+}
+.room-set{
+    margin-top:50px;
+}
+#demo{
+    margin-left: 50px;
+}
+.check-item{
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+.check-on-and-off{
+    padding: 0 30px 20px 30px;
+    width: 100%;
+}
