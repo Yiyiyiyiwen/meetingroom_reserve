@@ -19,6 +19,7 @@
 		4990B7C521BB591200041205 /* MeetingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7C421BB591200041205 /* MeetingVC.m */; };
 		4990B7C821BB591F00041205 /* ReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7C721BB591F00041205 /* ReserveVC.m */; };
 		4990B7CB21BB592D00041205 /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7CA21BB592D00041205 /* MyVC.m */; };
+		4994D53121F0A82B006F4C16 /* NoteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4994D53021F0A82B006F4C16 /* NoteVC.m */; };
 		49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDCE21B235BB00123F30 /* AppDelegate.m */; };
 		49A3BDD521B235BB00123F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD321B235BB00123F30 /* Main.storyboard */; };
 		49A3BDD721B235BD00123F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A3BDD621B235BD00123F30 /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 		49A3BDE721B235BD00123F30 /* meetingroom_reserve_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDE621B235BD00123F30 /* meetingroom_reserve_iOSTests.m */; };
 		49A3BDF221B235BD00123F30 /* meetingroom_reserve_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BDF121B235BD00123F30 /* meetingroom_reserve_iOSUITests.m */; };
 		49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3BE0121B25B3500123F30 /* LogInVC.m */; };
+		49A94B1621F0B0B600DA1594 /* CardsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A94B1521F0B0B600DA1594 /* CardsVC.m */; };
+		49A94B1921F0B0C400DA1594 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A94B1821F0B0C400DA1594 /* SettingsVC.m */; };
 		49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,8 @@
 		4990B7C721BB591F00041205 /* ReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReserveVC.m; sourceTree = "<group>"; };
 		4990B7C921BB592D00041205 /* MyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVC.h; sourceTree = "<group>"; };
 		4990B7CA21BB592D00041205 /* MyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVC.m; sourceTree = "<group>"; };
+		4994D52F21F0A82B006F4C16 /* NoteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteVC.h; sourceTree = "<group>"; };
+		4994D53021F0A82B006F4C16 /* NoteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteVC.m; sourceTree = "<group>"; };
 		49A3BDCA21B235BB00123F30 /* meetingroom_reserve_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetingroom_reserve_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A3BDCD21B235BB00123F30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49A3BDCE21B235BB00123F30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +93,10 @@
 		49A3BDF321B235BD00123F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A3BE0021B25B3500123F30 /* LogInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInVC.h; sourceTree = "<group>"; };
 		49A3BE0121B25B3500123F30 /* LogInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInVC.m; sourceTree = "<group>"; };
+		49A94B1421F0B0B600DA1594 /* CardsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsVC.h; sourceTree = "<group>"; };
+		49A94B1521F0B0B600DA1594 /* CardsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsVC.m; sourceTree = "<group>"; };
+		49A94B1721F0B0C400DA1594 /* SettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		49A94B1821F0B0C400DA1594 /* SettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		49B4CBDB21B26AD000CD9591 /* UIImage+XG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+XG.h"; sourceTree = "<group>"; };
 		49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XG.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +254,12 @@
 				4990B7CA21BB592D00041205 /* MyVC.m */,
 				4959051621F06B7D009B2F9C /* PersonalInfoVC.h */,
 				4959051721F06B7D009B2F9C /* PersonalInfoVC.m */,
+				4994D52F21F0A82B006F4C16 /* NoteVC.h */,
+				4994D53021F0A82B006F4C16 /* NoteVC.m */,
+				49A94B1421F0B0B600DA1594 /* CardsVC.h */,
+				49A94B1521F0B0B600DA1594 /* CardsVC.m */,
+				49A94B1721F0B0C400DA1594 /* SettingsVC.h */,
+				49A94B1821F0B0C400DA1594 /* SettingsVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -488,8 +503,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */,
+				49A94B1921F0B0C400DA1594 /* SettingsVC.m in Sources */,
 				4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */,
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
+				4994D53121F0A82B006F4C16 /* NoteVC.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
 				4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
@@ -500,6 +517,7 @@
 				49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */,
 				4990B7C521BB591200041205 /* MeetingVC.m in Sources */,
 				4990B7CB21BB592D00041205 /* MyVC.m in Sources */,
+				49A94B1621F0B0B600DA1594 /* CardsVC.m in Sources */,
 				49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */,
 				490A4FC521B509A9004836D3 /* SignInNav.m in Sources */,
 				4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */,

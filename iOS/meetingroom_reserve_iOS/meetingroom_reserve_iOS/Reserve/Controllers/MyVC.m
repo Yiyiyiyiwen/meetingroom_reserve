@@ -9,6 +9,9 @@
 #import "MyVC.h"
 #import "UIImage+XG.h"
 #import "PersonalInfoVC.h"
+#import "NoteVC.h"
+#import "CardsVC.h"
+#import "SettingsVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface MyVC ()<UITableViewDelegate, UITableViewDataSource>
@@ -31,7 +34,7 @@
     if (_datas == nil) {
         _datas = [NSMutableArray arrayWithCapacity:0];
         NSString *personalInfo = @"个人资料";
-        NSString *meetingNote = @"我的会议笔记";
+        NSString *meetingNote = @"会议笔记";
         NSString *digitalCards = @"电子卡包";
         NSString *setting = @"设置";
         NSArray *arr = [NSArray arrayWithObjects:personalInfo,meetingNote,digitalCards,setting, nil];
@@ -100,6 +103,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         PersonalInfoVC *personalInfoVC = [sb instantiateViewControllerWithIdentifier:@"PersonalInfo"];
@@ -109,6 +113,36 @@
         }
         self.tabBarController.tabBar.hidden = YES;
         [self.navigationController pushViewController:personalInfoVC animated:YES];
+    }
+    if (indexPath.row == 1) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        NoteVC *note = [sb instantiateViewControllerWithIdentifier:@"Note"];
+        if (@available(iOS 11.0, *)) {
+            self.navigationController.navigationBar.prefersLargeTitles = NO;
+        } else {
+        }
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:note animated:YES];
+    }
+    if (indexPath.row == 2) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        CardsVC *cards = [sb instantiateViewControllerWithIdentifier:@"Cards"];
+        if (@available(iOS 11.0, *)) {
+            self.navigationController.navigationBar.prefersLargeTitles = NO;
+        } else {
+        }
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:cards animated:YES];
+    }
+    if (indexPath.row == 3) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        SettingsVC *settings = [sb instantiateViewControllerWithIdentifier:@"Settings"];
+        if (@available(iOS 11.0, *)) {
+            self.navigationController.navigationBar.prefersLargeTitles = NO;
+        } else {
+        }
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:settings animated:YES];
     }
 }
 
