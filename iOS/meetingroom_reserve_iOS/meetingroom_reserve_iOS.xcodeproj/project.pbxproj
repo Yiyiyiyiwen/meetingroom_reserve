@@ -12,6 +12,7 @@
 		49402CE421BD02A0004F9CCE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49402CE321BD02A0004F9CCE /* MyCell.m */; };
 		4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051021F04FD2009B2F9C /* VerificationCodeVC.m */; };
 		4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051321F05D48009B2F9C /* VerificationCodeView.m */; };
+		4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051721F06B7D009B2F9C /* PersonalInfoVC.m */; };
 		4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7B721BB4A9100041205 /* ForgetPwdVC.m */; };
 		4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7BA21BB4AAA00041205 /* ForgetPwdNav.m */; };
 		4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7C121BB4F0000041205 /* ReserveTabbarController.m */; };
@@ -57,6 +58,8 @@
 		4959051021F04FD2009B2F9C /* VerificationCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeVC.m; sourceTree = "<group>"; };
 		4959051221F05D48009B2F9C /* VerificationCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationCodeView.h; sourceTree = "<group>"; };
 		4959051321F05D48009B2F9C /* VerificationCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeView.m; sourceTree = "<group>"; };
+		4959051621F06B7D009B2F9C /* PersonalInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoVC.h; sourceTree = "<group>"; };
+		4959051721F06B7D009B2F9C /* PersonalInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoVC.m; sourceTree = "<group>"; };
 		4990B7B621BB4A9100041205 /* ForgetPwdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdVC.h; sourceTree = "<group>"; };
 		4990B7B721BB4A9100041205 /* ForgetPwdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdVC.m; sourceTree = "<group>"; };
 		4990B7B921BB4AAA00041205 /* ForgetPwdNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdNav.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				4990B7C721BB591F00041205 /* ReserveVC.m */,
 				4990B7C921BB592D00041205 /* MyVC.h */,
 				4990B7CA21BB592D00041205 /* MyVC.m */,
+				4959051621F06B7D009B2F9C /* PersonalInfoVC.h */,
+				4959051721F06B7D009B2F9C /* PersonalInfoVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */,
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
+				4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
 				4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */,
 				49402CE421BD02A0004F9CCE /* MyCell.m in Sources */,

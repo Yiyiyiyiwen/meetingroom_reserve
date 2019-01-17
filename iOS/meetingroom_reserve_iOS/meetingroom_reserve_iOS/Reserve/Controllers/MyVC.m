@@ -8,6 +8,7 @@
 
 #import "MyVC.h"
 #import "UIImage+XG.h"
+#import "PersonalInfoVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface MyVC ()<UITableViewDelegate, UITableViewDataSource>
@@ -37,6 +38,14 @@
         [self.datas addObjectsFromArray:arr];
     }
     return _datas;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+    } else {
+    }
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -91,7 +100,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"选择了列表中的%@", [self.datas objectAtIndex:indexPath.row]);
+    if (indexPath.row == 0) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        PersonalInfoVC *personalInfoVC = [sb instantiateViewControllerWithIdentifier:@"PersonalInfo"];
+        if (@available(iOS 11.0, *)) {
+            self.navigationController.navigationBar.prefersLargeTitles = NO;
+        } else {
+        }
+        self.tabBarController.tabBar.hidden = YES;
+        [self.navigationController pushViewController:personalInfoVC animated:YES];
+    }
 }
 
 
