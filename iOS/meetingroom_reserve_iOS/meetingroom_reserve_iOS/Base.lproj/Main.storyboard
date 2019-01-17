@@ -191,6 +191,21 @@
             </objects>
             <point key="canvasLocation" x="2601" y="26"/>
         </scene>
+        <!--Verification CodeVC-->
+        <scene sceneID="tbc-rz-Ekv">
+            <objects>
+                <viewController storyboardIdentifier="VerificationCode" id="z9R-PY-SnQ" customClass="VerificationCodeVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q46-SW-s9b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FCD-lI-0JE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsm-xf-wLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="-271"/>
+        </scene>
         <!--Item-->
         <scene sceneID="8Vi-x9-fOc">
             <objects>

@@ -10,6 +10,8 @@
 		490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FBE21B506E4004836D3 /* SignInVC.m */; };
 		490A4FC521B509A9004836D3 /* SignInNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FC421B509A9004836D3 /* SignInNav.m */; };
 		49402CE421BD02A0004F9CCE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49402CE321BD02A0004F9CCE /* MyCell.m */; };
+		4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051021F04FD2009B2F9C /* VerificationCodeVC.m */; };
+		4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051321F05D48009B2F9C /* VerificationCodeView.m */; };
 		4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7B721BB4A9100041205 /* ForgetPwdVC.m */; };
 		4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7BA21BB4AAA00041205 /* ForgetPwdNav.m */; };
 		4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7C121BB4F0000041205 /* ReserveTabbarController.m */; };
@@ -51,6 +53,10 @@
 		490A4FC421B509A9004836D3 /* SignInNav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNav.m; sourceTree = "<group>"; };
 		49402CE221BD02A0004F9CCE /* MyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		49402CE321BD02A0004F9CCE /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		4959050F21F04FD2009B2F9C /* VerificationCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationCodeVC.h; sourceTree = "<group>"; };
+		4959051021F04FD2009B2F9C /* VerificationCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeVC.m; sourceTree = "<group>"; };
+		4959051221F05D48009B2F9C /* VerificationCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationCodeView.h; sourceTree = "<group>"; };
+		4959051321F05D48009B2F9C /* VerificationCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeView.m; sourceTree = "<group>"; };
 		4990B7B621BB4A9100041205 /* ForgetPwdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdVC.h; sourceTree = "<group>"; };
 		4990B7B721BB4A9100041205 /* ForgetPwdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdVC.m; sourceTree = "<group>"; };
 		4990B7B921BB4AAA00041205 /* ForgetPwdNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdNav.h; sourceTree = "<group>"; };
@@ -141,6 +147,41 @@
 				490A4FC421B509A9004836D3 /* SignInNav.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4959050B21F04F61009B2F9C /* VerificationCode */ = {
+			isa = PBXGroup;
+			children = (
+				4959050C21F04F7A009B2F9C /* Models */,
+				4959050D21F04F8D009B2F9C /* Views */,
+				4959050E21F04F9C009B2F9C /* Controller */,
+			);
+			path = VerificationCode;
+			sourceTree = "<group>";
+		};
+		4959050C21F04F7A009B2F9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4959050D21F04F8D009B2F9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4959051221F05D48009B2F9C /* VerificationCodeView.h */,
+				4959051321F05D48009B2F9C /* VerificationCodeView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4959050E21F04F9C009B2F9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4959050F21F04FD2009B2F9C /* VerificationCodeVC.h */,
+				4959051021F04FD2009B2F9C /* VerificationCodeVC.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		4990B7AC21BB493E00041205 /* ForgetPasspord */ = {
@@ -243,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				4990B7BC21BB4EA900041205 /* Reserve */,
+				4959050B21F04F61009B2F9C /* VerificationCode */,
 				4990B7AC21BB493E00041205 /* ForgetPasspord */,
 				490A4FB621B50654004836D3 /* SignIn */,
 				49A3BDFF21B25AFF00123F30 /* LogIn */,
@@ -440,12 +482,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */,
 				4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */,
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
 				4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */,
 				49402CE421BD02A0004F9CCE /* MyCell.m in Sources */,
+				4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */,
 				490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */,
 				49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */,
 				4990B7C521BB591200041205 /* MeetingVC.m in Sources */,

@@ -7,11 +7,11 @@
 //
 
 #import "SignInVC.h"
-
+#import "VerificationCodeVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface SignInVC ()
-
+@property (nonatomic, strong) UITextField* telText;
 @end
 
 @implementation SignInVC
@@ -55,6 +55,7 @@
     [telView addSubview:line];
     //电话号码输入框
     UITextField *telNumTextfield = [[UITextField alloc]initWithFrame:CGRectMake(telView.frame.size.width*0.25, 0, telView.frame.size.width*0.75, telView.frame.size.height)];
+    self.telText = telNumTextfield;
     telNumTextfield.tag = 1;
     telNumTextfield.keyboardType = UIKeyboardTypeNumberPad;
     telNumTextfield.textColor = [UIColor blackColor];
@@ -76,7 +77,14 @@
 }
 
 - (void) next{
-    NSLog(@"下一步");
+    if ([self valiMobile:self.telText.text]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        VerificationCodeVC *vc = [sb instantiateViewControllerWithIdentifier:@"VerificationCode"];
+        vc.telNum = self.telText.text;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        [self showError:@"手机号码有误，请重新输入!"];
+    }
 }
 
 //返回
@@ -94,5 +102,46 @@
 //键盘弹回
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+}
+
+//手机号码格式判断
+- (BOOL)valiMobile:(NSString *)mobile{
+    mobile = [mobile stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (mobile.length != 11){
+        return NO;
+    }else{
+        /**
+         * 移动号段正则表达式
+         */
+        NSString *CM_NUM = @"^((13[4-9])|(147)|(15[0-2,7-9])|(178)|(18[2-4,7-8]))\\d{8}|(1705)\\d{7}$";
+        /**
+         * 联通号段正则表达式
+         */
+        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(176)|(18[5,6]))\\d{8}|(1709)\\d{7}$";
+        /**
+         * 电信号段正则表达式
+         */
+        NSString *CT_NUM = @"^((133)|(153)|(177)|(18[0,1,9]))\\d{8}$";
+        NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM_NUM];
+        BOOL isMatch1 = [pred1 evaluateWithObject:mobile];
+        NSPredicate *pred2 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU_NUM];
+        BOOL isMatch2 = [pred2 evaluateWithObject:mobile];
+        NSPredicate *pred3 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT_NUM];
+        BOOL isMatch3 = [pred3 evaluateWithObject:mobile];
+        if (isMatch1 || isMatch2 || isMatch3) {
+            return YES;
+        }else{
+            return NO;
+        }
+    }
+}
+
+// 提示错误信息
+- (void)showError:(NSString *)errorMsg {
+    // 初始化对话框
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+    // 弹出对话框
+    [self presentViewController:alert animated:true completion:nil];
 }
 @end
