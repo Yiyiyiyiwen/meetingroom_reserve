@@ -72,6 +72,21 @@
             </objects>
             <point key="canvasLocation" x="2601" y="-752"/>
         </scene>
+        <!--Set PasswordVC-->
+        <scene sceneID="uPA-f6-de6">
+            <objects>
+                <viewController storyboardIdentifier="SetPassword" id="AQs-xi-5LJ" customClass="SetPasswordVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n6H-b0-mrj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vuv-rB-nId"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3V-GQ-Nh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3593" y="-752"/>
+        </scene>
         <!--Forget Pwd Nav-->
         <scene sceneID="TTg-Cv-z6b">
             <objects>
@@ -264,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsm-xf-wLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3977" y="-271"/>
+            <point key="canvasLocation" x="3594" y="26"/>
         </scene>
         <!--Item-->
         <scene sceneID="8Vi-x9-fOc">

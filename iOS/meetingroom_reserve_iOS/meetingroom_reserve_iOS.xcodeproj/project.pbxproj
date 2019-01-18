@@ -13,6 +13,7 @@
 		4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051021F04FD2009B2F9C /* VerificationCodeVC.m */; };
 		4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051321F05D48009B2F9C /* VerificationCodeView.m */; };
 		4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051721F06B7D009B2F9C /* PersonalInfoVC.m */; };
+		49753B8D21F1D2C0003ACE0C /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49753B8C21F1D2C0003ACE0C /* SetPasswordVC.m */; };
 		4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7B721BB4A9100041205 /* ForgetPwdVC.m */; };
 		4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7BA21BB4AAA00041205 /* ForgetPwdNav.m */; };
 		4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990B7C121BB4F0000041205 /* ReserveTabbarController.m */; };
@@ -63,6 +64,8 @@
 		4959051321F05D48009B2F9C /* VerificationCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationCodeView.m; sourceTree = "<group>"; };
 		4959051621F06B7D009B2F9C /* PersonalInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoVC.h; sourceTree = "<group>"; };
 		4959051721F06B7D009B2F9C /* PersonalInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoVC.m; sourceTree = "<group>"; };
+		49753B8B21F1D2C0003ACE0C /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
+		49753B8C21F1D2C0003ACE0C /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
 		4990B7B621BB4A9100041205 /* ForgetPwdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdVC.h; sourceTree = "<group>"; };
 		4990B7B721BB4A9100041205 /* ForgetPwdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdVC.m; sourceTree = "<group>"; };
 		4990B7B921BB4AAA00041205 /* ForgetPwdNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdNav.h; sourceTree = "<group>"; };
@@ -196,6 +199,39 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		49753B8721F1D27C003ACE0C /* SetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				49753B8A21F1D2AA003ACE0C /* Models */,
+				49753B8921F1D2A4003ACE0C /* Views */,
+				49753B8821F1D293003ACE0C /* Controller */,
+			);
+			path = SetPassword;
+			sourceTree = "<group>";
+		};
+		49753B8821F1D293003ACE0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49753B8B21F1D2C0003ACE0C /* SetPasswordVC.h */,
+				49753B8C21F1D2C0003ACE0C /* SetPasswordVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49753B8921F1D2A4003ACE0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49753B8A21F1D2AA003ACE0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4990B7AC21BB493E00041205 /* ForgetPasspord */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				4990B7BC21BB4EA900041205 /* Reserve */,
+				49753B8721F1D27C003ACE0C /* SetPassword */,
 				4959050B21F04F61009B2F9C /* VerificationCode */,
 				4990B7AC21BB493E00041205 /* ForgetPasspord */,
 				490A4FB621B50654004836D3 /* SignIn */,
@@ -520,6 +557,7 @@
 				49A94B1621F0B0B600DA1594 /* CardsVC.m in Sources */,
 				49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */,
 				490A4FC521B509A9004836D3 /* SignInNav.m in Sources */,
+				49753B8D21F1D2C0003ACE0C /* SetPasswordVC.m in Sources */,
 				4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

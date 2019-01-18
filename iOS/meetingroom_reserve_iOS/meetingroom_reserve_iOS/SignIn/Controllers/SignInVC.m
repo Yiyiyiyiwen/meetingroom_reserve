@@ -7,7 +7,7 @@
 //
 
 #import "SignInVC.h"
-#import "VerificationCodeVC.h"
+#import "SetPasswordVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface SignInVC ()
@@ -79,8 +79,7 @@
 - (void) next{
     if ([self valiMobile:self.telText.text]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        VerificationCodeVC *vc = [sb instantiateViewControllerWithIdentifier:@"VerificationCode"];
-        vc.telNum = self.telText.text;
+        SetPasswordVC *vc = [sb instantiateViewControllerWithIdentifier:@"SetPassword"];
         [self.navigationController pushViewController:vc animated:YES];
     }else{
         [self showError:@"手机号码有误，请重新输入!"];
