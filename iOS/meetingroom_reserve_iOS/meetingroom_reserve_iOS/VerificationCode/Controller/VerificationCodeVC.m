@@ -8,6 +8,7 @@
 
 #import "VerificationCodeVC.h"
 #import "VerificationCodeView.h"
+#import "SetPasswordVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface VerificationCodeVC ()
@@ -74,7 +75,10 @@
 
 //下一步
 - (void) next{
-    NSLog(@"next");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    SetPasswordVC *vc = [sb instantiateViewControllerWithIdentifier:@"SetPassword"];
+    vc.verStr = @"验证码";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //键盘弹回

@@ -7,6 +7,7 @@
 //
 
 #import "SetPasswordVC.h"
+#import "LogInVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface SetPasswordVC ()<UITextFieldDelegate>
@@ -23,6 +24,10 @@
 
 - (void) initUI{
     self.navigationItem.title = @"设置密码";
+    if ([self.verStr isEqualToString:@"验证码"]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        [self.navigationItem setHidesBackButton:YES];
+    }
     //请输入密码
     UILabel *remindLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.2, SCREEN_WIDTH*0.4, SCREEN_WIDTH*0.1)];
     remindLabel.text = @"请输入密码";
@@ -58,6 +63,63 @@
     eye.frame = CGRectMake(pWidth*0.92, SCREEN_HEIGHT*0.062, pWidth*0.06, pWidth*0.06);
     [eye addTarget:self action:@selector(eyeTouch:) forControlEvents:UIControlEventTouchUpInside];
     [passwordView addSubview:eye];
+    //输入提醒
+    UILabel *pwdCheckLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.32+SCREEN_WIDTH*0.3+10, SCREEN_WIDTH*0.3, SCREEN_HEIGHT*0.02)];
+    pwdCheckLabel.text = @"需6~20位字符";
+    pwdCheckLabel.textColor = [UIColor colorWithRed:97.0/255.0 green:134.0/255.0 blue:220.0/255.0 alpha:1.0];
+    pwdCheckLabel.font = [UIFont systemFontOfSize:13];
+    [self.view addSubview:pwdCheckLabel];
+    //下一步按钮
+    UIButton *nextStep = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    nextStep.tag = 3;
+    [nextStep.layer setMasksToBounds:YES];
+    [nextStep.layer setCornerRadius:5.0];
+    [nextStep setTitle:@"下一步" forState:UIControlStateNormal];
+    [nextStep setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [nextStep setBackgroundColor:[UIColor colorWithRed:97.0/255.0 green:134.0/255.0 blue:220.0/255.0 alpha:1.0]];
+    nextStep.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.34+SCREEN_WIDTH*0.3+30, SCREEN_WIDTH*0.9, SCREEN_WIDTH*0.13);
+    [nextStep addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:nextStep];
+    //增加监听，当键盘出现或改变时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    //增加监听，当键退出时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+//当键盘出现或改变时调用
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    int height = keyboardRect.size.height;
+    UIView *login = [self.view viewWithTag:3];
+    CGRect frame = login.frame;
+    int offSet = frame.origin.y + 70 - (self.view.frame.size.height - height);
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:0.5f];
+    if (offSet > 0) {
+        self.view.frame = CGRectMake(0.0f, -offSet, self.view.frame.size.width, self.view.frame.size.height);
+        [UIView commitAnimations];
+    }
+}
+
+//当键退出时调用
+- (void)keyboardWillHide:(NSNotification *)aNotification{
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
+
+//下一步
+- (void) next{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)eyeTouch:(UIButton *)sender{
