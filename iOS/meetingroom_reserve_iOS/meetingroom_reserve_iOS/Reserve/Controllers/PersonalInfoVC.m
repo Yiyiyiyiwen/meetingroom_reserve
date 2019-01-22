@@ -7,13 +7,13 @@
 //
 
 #import "PersonalInfoVC.h"
-
+#import "SelectPhotoManager.h"
 @interface PersonalInfoVC ()<UITableViewDelegate, UITableViewDataSource>
-
+@property(nonatomic,strong) UIImageView * image;
+@property (nonatomic, strong)SelectPhotoManager *photoManager;
 @end
 
 @implementation PersonalInfoVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
@@ -49,10 +49,34 @@
     }
     cell.textLabel.text = [self.datas objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (indexPath.row == 0){
+        self.image = [[UIImageView alloc]initWithFrame:CGRectMake(cell.frame.size.width*0.95, cell.frame.size.height*0.05, cell.frame.size.height*0.9, cell.frame.size.height*0.9)];
+        self.image.layer.masksToBounds = YES;
+        self.image.layer.cornerRadius = self.image.frame.size.width/2.0;
+        UIImage *img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+        if (img) {
+            self.image.image = img;
+        }
+        [cell addSubview:self.image];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        if (!_photoManager) {
+            _photoManager =[[SelectPhotoManager alloc]init];
+        }
+        [_photoManager startSelectPhotoWithImageName:@"选择头像"];
+        __weak typeof(self)mySelf=self;
+        //选取照片成功
+        _photoManager.successHandle=^(SelectPhotoManager *manager,UIImage *image){
+            mySelf.image.image = image;
+            //保存到本地
+            NSData *data = UIImagePNGRepresentation(image);
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"headerImage"];
+        };
+    }
 }
 @end

@@ -32,6 +32,7 @@
 		49A94B1621F0B0B600DA1594 /* CardsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A94B1521F0B0B600DA1594 /* CardsVC.m */; };
 		49A94B1921F0B0C400DA1594 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A94B1821F0B0C400DA1594 /* SettingsVC.m */; };
 		49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */; };
+		49D58F0D21F6E8A300E0B714 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		49A94B1821F0B0C400DA1594 /* SettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		49B4CBDB21B26AD000CD9591 /* UIImage+XG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+XG.h"; sourceTree = "<group>"; };
 		49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XG.m"; sourceTree = "<group>"; };
+		49D58F0B21F6E8A200E0B714 /* SelectPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
+		49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,25 +135,9 @@
 		490A4FB621B50654004836D3 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				490A4FB721B50667004836D3 /* Models */,
-				490A4FB821B50670004836D3 /* Views */,
 				490A4FB921B5067F004836D3 /* Controllers */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		490A4FB721B50667004836D3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		490A4FB821B50670004836D3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		490A4FB921B5067F004836D3 /* Controllers */ = {
@@ -167,18 +154,10 @@
 		4959050B21F04F61009B2F9C /* VerificationCode */ = {
 			isa = PBXGroup;
 			children = (
-				4959050C21F04F7A009B2F9C /* Models */,
 				4959050D21F04F8D009B2F9C /* Views */,
 				4959050E21F04F9C009B2F9C /* Controller */,
 			);
 			path = VerificationCode;
-			sourceTree = "<group>";
-		};
-		4959050C21F04F7A009B2F9C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		4959050D21F04F8D009B2F9C /* Views */ = {
@@ -202,8 +181,6 @@
 		49753B8721F1D27C003ACE0C /* SetPassword */ = {
 			isa = PBXGroup;
 			children = (
-				49753B8A21F1D2AA003ACE0C /* Models */,
-				49753B8921F1D2A4003ACE0C /* Views */,
 				49753B8821F1D293003ACE0C /* Controller */,
 			);
 			path = SetPassword;
@@ -218,42 +195,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		49753B8921F1D2A4003ACE0C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		49753B8A21F1D2AA003ACE0C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		4990B7AC21BB493E00041205 /* ForgetPasspord */ = {
 			isa = PBXGroup;
 			children = (
-				4990B7AD21BB495E00041205 /* Models */,
-				4990B7AE21BB496A00041205 /* Views */,
 				4990B7AF21BB497100041205 /* Controllers */,
 			);
 			path = ForgetPasspord;
-			sourceTree = "<group>";
-		};
-		4990B7AD21BB495E00041205 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		4990B7AE21BB496A00041205 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		4990B7AF21BB497100041205 /* Controllers */ = {
@@ -270,7 +217,6 @@
 		4990B7BC21BB4EA900041205 /* Reserve */ = {
 			isa = PBXGroup;
 			children = (
-				4990B7BF21BB4EDA00041205 /* Models */,
 				4990B7BE21BB4ED100041205 /* Views */,
 				4990B7BD21BB4EC800041205 /* Controllers */,
 			);
@@ -305,15 +251,10 @@
 			children = (
 				49402CE221BD02A0004F9CCE /* MyCell.h */,
 				49402CE321BD02A0004F9CCE /* MyCell.m */,
+				49D58F0B21F6E8A200E0B714 /* SelectPhotoManager.h */,
+				49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		4990B7BF21BB4EDA00041205 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		49A3BDC121B235BB00123F30 = {
@@ -377,7 +318,6 @@
 		49A3BDFF21B25AFF00123F30 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				49A3BE0421B25B4B00123F30 /* Models */,
 				49A3BE0321B25B4100123F30 /* Views */,
 				49A3BE0521B25B5300123F30 /* Controller */,
 			);
@@ -391,13 +331,6 @@
 				49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		49A3BE0421B25B4B00123F30 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		49A3BE0521B25B5300123F30 /* Controller */ = {
@@ -540,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */,
+				49D58F0D21F6E8A300E0B714 /* SelectPhotoManager.m in Sources */,
 				49A94B1921F0B0C400DA1594 /* SettingsVC.m in Sources */,
 				4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */,
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,

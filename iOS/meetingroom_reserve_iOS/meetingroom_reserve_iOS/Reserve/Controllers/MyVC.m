@@ -15,7 +15,7 @@
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface MyVC ()<UITableViewDelegate, UITableViewDataSource>
-
+@property(nonatomic,strong) UIImageView * headImageView;
 @end
 
 @implementation MyVC
@@ -49,6 +49,10 @@
     } else {
     }
     self.tabBarController.tabBar.hidden = NO;
+    UIImage *img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+    if (img) {
+        self.headImageView.image = img;
+    }
 }
 
 - (void)viewDidLoad {
@@ -66,10 +70,14 @@
     UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT*0.13, SCREEN_WIDTH, SCREEN_HEIGHT*0.33)];
     [self.view addSubview:topView];
     //头像
-    UIImageView *headImgView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.2, topView.frame.size.width*0.30, topView.frame.size.width*0.30)];
-    UIImage_XG * headImg = [UIImage_XG imageWithIconName:@"headImage" borderImage:@"" border:0];
-    headImgView.image = headImg;
-    [topView addSubview:headImgView];
+    self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.2, topView.frame.size.width*0.30, topView.frame.size.width*0.30)];
+    self.headImageView.layer.masksToBounds = YES;
+    self.headImageView.layer.cornerRadius = self.headImageView.frame.size.width/2.0;
+    UIImage *img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+    if (img) {
+        self.headImageView.image = img;
+    }
+    [topView addSubview:self.headImageView];
     //姓名
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.8, topView.frame.size.width*0.3, topView.frame.size.height*0.1)];
     UIWindow * window = [[[UIApplication sharedApplication] delegate] window];

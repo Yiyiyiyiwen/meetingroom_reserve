@@ -32,8 +32,12 @@
     self.backgroundView.layer.contents = (id)backgroundImage.CGImage;
     //头像
     UIImageView *headImgView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.1, SCREEN_WIDTH*0.15, SCREEN_WIDTH*0.15)];
-    UIImage_XG * headImg = [UIImage_XG imageWithIconName:@"headImage" borderImage:@"" border:0];
-    headImgView.image = headImg;
+    headImgView.layer.masksToBounds = YES;
+    headImgView.layer.cornerRadius = headImgView.frame.size.width/2.0;
+    UIImage *img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+    if (img) {
+        headImgView.image = img;
+    }
     [self.view addSubview:headImgView];
     //欢迎文字
     UILabel *welcome = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.2, SCREEN_WIDTH*0.3, SCREEN_HEIGHT*0.1)];
