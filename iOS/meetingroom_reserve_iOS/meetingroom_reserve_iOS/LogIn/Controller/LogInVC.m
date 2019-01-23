@@ -162,6 +162,7 @@
     UITextField *telNum = (UITextField *)[self.view  viewWithTag:1];
     UITextField *pwd = (UITextField *)[self.view viewWithTag:2];
     if ([telNum.text isEqualToString:@"1"]&&[pwd.text isEqualToString:@"1"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:telNum.text forKey:@"tel"];
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
         [self presentViewController:reserveTabbarController animated:YES completion:nil];

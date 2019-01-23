@@ -16,6 +16,7 @@
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface MyVC ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic,strong) UIImageView * headImageView;
+@property(nonatomic,strong) UILabel * nameLabel;
 @end
 
 @implementation MyVC
@@ -50,8 +51,10 @@
     }
     self.tabBarController.tabBar.hidden = NO;
     UIImage *img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     if (img) {
         self.headImageView.image = img;
+        self.nameLabel.text = name;
     }
 }
 
@@ -79,19 +82,20 @@
     }
     [topView addSubview:self.headImageView];
     //姓名
-    UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.8, topView.frame.size.width*0.3, topView.frame.size.height*0.1)];
+    self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.8, topView.frame.size.width*0.3, topView.frame.size.height*0.1)];
     UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
     if (@available(iOS 11.0, *)) {
         if (window.safeAreaInsets.bottom > 0.0) {
-            nameLabel.frame = CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.65, topView.frame.size.width*0.3, topView.frame.size.height*0.1);
+            self.nameLabel.frame = CGRectMake(topView.frame.size.width*0.35, topView.frame.size.height*0.65, topView.frame.size.width*0.3, topView.frame.size.height*0.1);
         } else {
         }
     } else {
     }
-    nameLabel.text = @"王 先 生";
-    nameLabel.textAlignment = NSTextAlignmentCenter;
-    nameLabel.font = [UIFont systemFontOfSize:20];
-    [topView addSubview:nameLabel];
+    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    self.nameLabel.text = name;
+    self.nameLabel.textAlignment = NSTextAlignmentCenter;
+    self.nameLabel.font = [UIFont systemFontOfSize:20];
+    [topView addSubview:self.nameLabel];
     self.tableView.tableHeaderView = topView;
     self.tableView.tableFooterView = [[UIView alloc]init];
 }

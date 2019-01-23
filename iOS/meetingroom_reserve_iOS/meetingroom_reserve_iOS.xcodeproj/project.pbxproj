@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FBE21B506E4004836D3 /* SignInVC.m */; };
 		490A4FC521B509A9004836D3 /* SignInNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FC421B509A9004836D3 /* SignInNav.m */; };
+		4937812F21F8410500E52F52 /* YCPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937812E21F8410500E52F52 /* YCPickerView.m */; };
+		4937813321F84D6B00E52F52 /* DataPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937813221F84D6B00E52F52 /* DataPickerView.m */; };
 		49402CE421BD02A0004F9CCE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49402CE321BD02A0004F9CCE /* MyCell.m */; };
 		4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051021F04FD2009B2F9C /* VerificationCodeVC.m */; };
 		4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4959051321F05D48009B2F9C /* VerificationCodeView.m */; };
@@ -57,6 +59,10 @@
 		490A4FBE21B506E4004836D3 /* SignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 		490A4FC321B509A9004836D3 /* SignInNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNav.h; sourceTree = "<group>"; };
 		490A4FC421B509A9004836D3 /* SignInNav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNav.m; sourceTree = "<group>"; };
+		4937812D21F8410500E52F52 /* YCPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCPickerView.h; sourceTree = "<group>"; };
+		4937812E21F8410500E52F52 /* YCPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCPickerView.m; sourceTree = "<group>"; };
+		4937813121F84D6B00E52F52 /* DataPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataPickerView.h; sourceTree = "<group>"; };
+		4937813221F84D6B00E52F52 /* DataPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataPickerView.m; sourceTree = "<group>"; };
 		49402CE221BD02A0004F9CCE /* MyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		49402CE321BD02A0004F9CCE /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 		4959050F21F04FD2009B2F9C /* VerificationCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationCodeVC.h; sourceTree = "<group>"; };
@@ -249,10 +255,14 @@
 		4990B7BE21BB4ED100041205 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4937812D21F8410500E52F52 /* YCPickerView.h */,
+				4937812E21F8410500E52F52 /* YCPickerView.m */,
 				49402CE221BD02A0004F9CCE /* MyCell.h */,
 				49402CE321BD02A0004F9CCE /* MyCell.m */,
 				49D58F0B21F6E8A200E0B714 /* SelectPhotoManager.h */,
 				49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */,
+				4937813121F84D6B00E52F52 /* DataPickerView.h */,
+				4937813221F84D6B00E52F52 /* DataPickerView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -474,12 +484,14 @@
 			files = (
 				4959051421F05D48009B2F9C /* VerificationCodeView.m in Sources */,
 				49D58F0D21F6E8A300E0B714 /* SelectPhotoManager.m in Sources */,
+				4937813321F84D6B00E52F52 /* DataPickerView.m in Sources */,
 				49A94B1921F0B0C400DA1594 /* SettingsVC.m in Sources */,
 				4990B7BB21BB4AAA00041205 /* ForgetPwdNav.m in Sources */,
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
 				4994D53121F0A82B006F4C16 /* NoteVC.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
 				4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */,
+				4937812F21F8410500E52F52 /* YCPickerView.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
 				4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */,
 				49402CE421BD02A0004F9CCE /* MyCell.m in Sources */,
