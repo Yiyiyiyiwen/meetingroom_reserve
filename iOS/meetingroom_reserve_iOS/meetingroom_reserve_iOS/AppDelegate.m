@@ -16,7 +16,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //判断是否登陆，由登陆状态判断启动页面
+    //获取UserDefault
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *tel = [userDefault objectForKey:@"tel"];
+    
+    //获取storyboard
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    //如果用户未登陆则把根视图控制器改变成登陆视图控制器
+    if (tel == nil)
+    {
+        id view = [storyboard instantiateViewControllerWithIdentifier:@"LogIn"];
+        self.window.rootViewController = view;
+    }
     return YES;
 }
 

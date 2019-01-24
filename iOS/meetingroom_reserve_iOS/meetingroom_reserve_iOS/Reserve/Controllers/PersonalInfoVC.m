@@ -30,7 +30,7 @@
 - (void) initUI{
     self.navigationItem.title = @"个人资料";
     self.choseDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"birth"];
-    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];

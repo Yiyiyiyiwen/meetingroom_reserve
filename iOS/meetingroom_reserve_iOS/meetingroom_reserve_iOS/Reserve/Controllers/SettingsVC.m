@@ -60,11 +60,35 @@
         cell.textLabel.text = @"退出登录";
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.textColor = [UIColor redColor];
+        cell.tag = 1;
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"退出后，您将不再收到消息" preferredStyle:UIAlertControllerStyleActionSheet];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                //获取UserDefaults单例
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                //移除UserDefaults中存储的用户信息
+                [userDefaults removeObjectForKey:@"tel"];
+                [userDefaults removeObjectForKey:@"password"];
+                [userDefaults synchronize];
+                //获取storyboard
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                //获取注销后要跳转的页面
+                id view = [storyboard instantiateViewControllerWithIdentifier:@"LogIn"];
+                //模态展示出登陆页面
+                [self presentViewController:view animated:YES completion:^{
+                }];
+            }]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end
