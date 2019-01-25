@@ -34,6 +34,9 @@
 		49A94B1621F0B0B600DA1594 /* CardsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A94B1521F0B0B600DA1594 /* CardsVC.m */; };
 		49A94B1921F0B0C400DA1594 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A94B1821F0B0C400DA1594 /* SettingsVC.m */; };
 		49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */; };
+		49C7A24321FAE49E00C7CEBF /* PrivacyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A24221FAE49E00C7CEBF /* PrivacyVC.m */; };
+		49C7A24621FAE5C500C7CEBF /* GenralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A24521FAE5C500C7CEBF /* GenralVC.m */; };
+		49C7A24921FAE5D400C7CEBF /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A24821FAE5D400C7CEBF /* AboutVC.m */; };
 		49D58F0D21F6E8A300E0B714 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +112,12 @@
 		49A94B1821F0B0C400DA1594 /* SettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		49B4CBDB21B26AD000CD9591 /* UIImage+XG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+XG.h"; sourceTree = "<group>"; };
 		49B4CBDC21B26AD000CD9591 /* UIImage+XG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XG.m"; sourceTree = "<group>"; };
+		49C7A24121FAE49E00C7CEBF /* PrivacyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyVC.h; sourceTree = "<group>"; };
+		49C7A24221FAE49E00C7CEBF /* PrivacyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyVC.m; sourceTree = "<group>"; };
+		49C7A24421FAE5C500C7CEBF /* GenralVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenralVC.h; sourceTree = "<group>"; };
+		49C7A24521FAE5C500C7CEBF /* GenralVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenralVC.m; sourceTree = "<group>"; };
+		49C7A24721FAE5D400C7CEBF /* AboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
+		49C7A24821FAE5D400C7CEBF /* AboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		49D58F0B21F6E8A200E0B714 /* SelectPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
 		49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +257,12 @@
 				49A94B1521F0B0B600DA1594 /* CardsVC.m */,
 				49A94B1721F0B0C400DA1594 /* SettingsVC.h */,
 				49A94B1821F0B0C400DA1594 /* SettingsVC.m */,
+				49C7A24121FAE49E00C7CEBF /* PrivacyVC.h */,
+				49C7A24221FAE49E00C7CEBF /* PrivacyVC.m */,
+				49C7A24421FAE5C500C7CEBF /* GenralVC.h */,
+				49C7A24521FAE5C500C7CEBF /* GenralVC.m */,
+				49C7A24721FAE5D400C7CEBF /* AboutVC.h */,
+				49C7A24821FAE5D400C7CEBF /* AboutVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -492,9 +507,11 @@
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
 				4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */,
 				4937812F21F8410500E52F52 /* YCPickerView.m in Sources */,
+				49C7A24621FAE5C500C7CEBF /* GenralVC.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
 				4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */,
 				49402CE421BD02A0004F9CCE /* MyCell.m in Sources */,
+				49C7A24921FAE5D400C7CEBF /* AboutVC.m in Sources */,
 				4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */,
 				490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */,
 				49B4CBDD21B26AD000CD9591 /* UIImage+XG.m in Sources */,
@@ -503,6 +520,7 @@
 				49A94B1621F0B0B600DA1594 /* CardsVC.m in Sources */,
 				49A3BE0221B25B3500123F30 /* LogInVC.m in Sources */,
 				490A4FC521B509A9004836D3 /* SignInNav.m in Sources */,
+				49C7A24321FAE49E00C7CEBF /* PrivacyVC.m in Sources */,
 				49753B8D21F1D2C0003ACE0C /* SetPasswordVC.m in Sources */,
 				4990B7B821BB4A9100041205 /* ForgetPwdVC.m in Sources */,
 			);

@@ -89,6 +89,7 @@
         telLabel.text = tel;
         telLabel.textAlignment = NSTextAlignmentRight;
         [cell addSubview:telLabel];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     if (indexPath.row == 3) {//性别
         self.sexLabel = [[UILabel alloc]initWithFrame:CGRectMake(cell.frame.size.width*0.7, cell.frame.size.height*0.05, cell.frame.size.width*0.36, cell.frame.size.height*0.9)];

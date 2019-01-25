@@ -7,7 +7,9 @@
 //
 
 #import "SettingsVC.h"
-
+#import "PrivacyVC.h"
+#import "GenralVC.h"
+#import "AboutVC.h"
 @interface SettingsVC ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -28,7 +30,7 @@
     _datas = [NSMutableArray arrayWithCapacity:0];
     NSString *privacy = @"隐私";
     NSString *general = @"通用";
-    NSString *about = @"关于";
+    NSString *about = @"关于会议室管理系统";
     NSArray *arr = [NSArray arrayWithObjects:privacy,general,about, nil];
     [self.datas addObjectsFromArray:arr];
     self.tableView.tableFooterView = [[UIView alloc]init];
@@ -60,12 +62,28 @@
         cell.textLabel.text = @"退出登录";
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.textColor = [UIColor redColor];
-        cell.tag = 1;
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            PrivacyVC *privacy = [sb instantiateViewControllerWithIdentifier:@"Privacy"];
+            [self.navigationController pushViewController:privacy animated:YES];
+        }
+        if (indexPath.row == 1) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            GenralVC *genral = [sb instantiateViewControllerWithIdentifier:@"Genral"];
+            [self.navigationController pushViewController:genral animated:YES];
+        }
+        if (indexPath.row == 2) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            AboutVC *about = [sb instantiateViewControllerWithIdentifier:@"About"];
+            [self.navigationController pushViewController:about animated:YES];
+        }
+    }
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"退出后，您将不再收到消息" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -91,4 +109,5 @@
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 @end

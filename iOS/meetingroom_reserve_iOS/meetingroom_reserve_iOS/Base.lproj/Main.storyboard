@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4B-LV-NK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5047" y="2067"/>
+            <point key="canvasLocation" x="4180" y="2877"/>
         </scene>
         <!--CardsVC-->
         <scene sceneID="bT9-7m-bhQ">
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTi-4W-2dY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5898" y="2067"/>
+            <point key="canvasLocation" x="4180" y="3688"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="s08-bV-P9z">
@@ -195,7 +195,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1f6-nt-fsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6750" y="2067"/>
+            <point key="canvasLocation" x="4180" y="4499"/>
+        </scene>
+        <!--PrivacyVC-->
+        <scene sceneID="8pF-vi-tpw">
+            <objects>
+                <viewController storyboardIdentifier="Privacy" id="13K-ky-TFa" customClass="PrivacyVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHP-W2-4Ur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="R15-pl-SWx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNF-GS-i0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5201" y="4499"/>
+        </scene>
+        <!--GenralVC-->
+        <scene sceneID="oGv-9j-wng">
+            <objects>
+                <viewController storyboardIdentifier="Genral" id="t4B-UZ-JFU" customClass="GenralVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TC0-iG-CVR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xCM-M1-pej"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSh-79-GOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6159" y="4499"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="Vb0-Zu-JKU">
+            <objects>
+                <viewController storyboardIdentifier="About" id="S9O-8Z-zt2" customClass="AboutVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7C2-m1-yrW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="baP-Go-ET2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZc-gx-UUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7142" y="4499"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Zsh-nI-ksZ">
