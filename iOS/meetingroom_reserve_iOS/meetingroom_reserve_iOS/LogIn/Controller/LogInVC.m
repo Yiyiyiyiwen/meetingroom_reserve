@@ -11,6 +11,7 @@
 #import "SignInNav.h"
 #import "ForgetPwdNav.h"
 #import "ReserveTabbarController.h"
+#import "AFNetworking.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface LogInVC ()
@@ -161,13 +162,52 @@
 - (void) login{
     UITextField *telNum = (UITextField *)[self.view  viewWithTag:1];
     UITextField *pwd = (UITextField *)[self.view viewWithTag:2];
-    if ([telNum.text isEqualToString:@"1"]&&[pwd.text isEqualToString:@"1"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:telNum.text forKey:@"tel"];
-        [[NSUserDefaults standardUserDefaults] setObject:pwd.text forKey:@"password"];
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
-        [self presentViewController:reserveTabbarController animated:YES completion:nil];
-    }
+    //获取输入的账号密码
+    NSString *username = telNum.text;
+    NSString *password = pwd.text;
+    //请求的参数
+    NSDictionary *parameters = @{
+                                 @"phone":username,
+                                 @"password":password
+                                 };
+    //请求的url
+    NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/user/login";
+    //请求的managers
+    AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+    //请求的方式：POST
+    [managers POST:urlString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"进度");
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+        NSString *data = [responseObject objectForKey:@"msg"];
+        if ([data isEqualToString:@"SUCCESS"]) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
+            [self presentViewController:reserveTabbarController animated:YES completion:nil];
+        }else{
+            NSString* errorMsg = @"账号或密码有误";
+            // 初始化对话框
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+            // 弹出对话框
+            [self presentViewController:alert animated:true completion:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败,服务器返回的错误信息%@",error);
+        NSString* errorMsg = @"请求失败！";
+        // 初始化对话框
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        // 弹出对话框
+        [self presentViewController:alert animated:true completion:nil];
+    }];
+//    if ([telNum.text isEqualToString:@"1"]&&[pwd.text isEqualToString:@"1"]) {
+//        [[NSUserDefaults standardUserDefaults] setObject:telNum.text forKey:@"tel"];
+//        [[NSUserDefaults standardUserDefaults] setObject:pwd.text forKey:@"password"];
+//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//        ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
+//        [self presentViewController:reserveTabbarController animated:YES completion:nil];
+//    }
 }
 
 //电话键盘监听

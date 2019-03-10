@@ -91,6 +91,7 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    NSLog(@"%@",self.signInRequestDic);
 }
 
 //当键盘出现或改变时调用

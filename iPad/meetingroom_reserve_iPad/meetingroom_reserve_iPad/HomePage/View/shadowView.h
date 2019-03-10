@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface shadowView : UIView
-
+- (void)createLargeView:(NSString*)largeTitle;
+- (void)createSmallView:(NSString*)smallTitle withImage:(UIImage*)image;
 @end
 
 NS_ASSUME_NONNULL_END

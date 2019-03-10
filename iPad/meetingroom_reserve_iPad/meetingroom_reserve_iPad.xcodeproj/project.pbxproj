@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4937AAFF21F584DB000E63DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937AAFE21F584DB000E63DB /* AppDelegate.m */; };
-		4937AB0221F584DB000E63DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937AB0121F584DB000E63DB /* ViewController.m */; };
 		4937AB0521F584DB000E63DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937AB0321F584DB000E63DB /* Main.storyboard */; };
 		4937AB0721F584DD000E63DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4937AB0621F584DD000E63DB /* Assets.xcassets */; };
 		4937AB0A21F584DD000E63DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937AB0821F584DD000E63DB /* LaunchScreen.storyboard */; };
 		4937AB0D21F584DD000E63DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937AB0C21F584DD000E63DB /* main.m */; };
 		4937AB1721F584DD000E63DB /* meetingroom_reserve_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937AB1621F584DD000E63DB /* meetingroom_reserve_iPadTests.m */; };
 		4937AB2221F584DD000E63DB /* meetingroom_reserve_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937AB2121F584DD000E63DB /* meetingroom_reserve_iPadUITests.m */; };
+		49EDE53A21F58B5C003B4A16 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EDE53921F58B5C003B4A16 /* HomePageVC.m */; };
+		49EDE54021F59079003B4A16 /* shadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EDE53F21F59079003B4A16 /* shadowView.m */; };
+		49EDE54521F5A4CB003B4A16 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EDE54421F5A4CB003B4A16 /* SignInVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,6 @@
 		4937AAFA21F584DB000E63DB /* meetingroom_reserve_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetingroom_reserve_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4937AAFD21F584DB000E63DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4937AAFE21F584DB000E63DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4937AB0021F584DB000E63DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4937AB0121F584DB000E63DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4937AB0421F584DB000E63DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4937AB0621F584DD000E63DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4937AB0921F584DD000E63DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,12 @@
 		4937AB1D21F584DD000E63DB /* meetingroom_reserve_iPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetingroom_reserve_iPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4937AB2121F584DD000E63DB /* meetingroom_reserve_iPadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meetingroom_reserve_iPadUITests.m; sourceTree = "<group>"; };
 		4937AB2321F584DD000E63DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EDE53821F58B5C003B4A16 /* HomePageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageVC.h; sourceTree = "<group>"; };
+		49EDE53921F58B5C003B4A16 /* HomePageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageVC.m; sourceTree = "<group>"; };
+		49EDE53E21F59079003B4A16 /* shadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shadowView.h; sourceTree = "<group>"; };
+		49EDE53F21F59079003B4A16 /* shadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shadowView.m; sourceTree = "<group>"; };
+		49EDE54321F5A4CB003B4A16 /* SignInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
+		49EDE54421F5A4CB003B4A16 /* SignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,10 @@
 		4937AAFC21F584DB000E63DB /* meetingroom_reserve_iPad */ = {
 			isa = PBXGroup;
 			children = (
+				49EDE54121F5A4AF003B4A16 /* SignIn */,
+				49EDE53B21F5904F003B4A16 /* HomePage */,
 				4937AAFD21F584DB000E63DB /* AppDelegate.h */,
 				4937AAFE21F584DB000E63DB /* AppDelegate.m */,
-				4937AB0021F584DB000E63DB /* ViewController.h */,
-				4937AB0121F584DB000E63DB /* ViewController.m */,
 				4937AB0321F584DB000E63DB /* Main.storyboard */,
 				4937AB0621F584DD000E63DB /* Assets.xcassets */,
 				4937AB0821F584DD000E63DB /* LaunchScreen.storyboard */,
@@ -130,6 +136,50 @@
 				4937AB2321F584DD000E63DB /* Info.plist */,
 			);
 			path = meetingroom_reserve_iPadUITests;
+			sourceTree = "<group>";
+		};
+		49EDE53B21F5904F003B4A16 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				49EDE53D21F59060003B4A16 /* View */,
+				49EDE53C21F59058003B4A16 /* Controller */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		49EDE53C21F59058003B4A16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49EDE53821F58B5C003B4A16 /* HomePageVC.h */,
+				49EDE53921F58B5C003B4A16 /* HomePageVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49EDE53D21F59060003B4A16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49EDE53E21F59079003B4A16 /* shadowView.h */,
+				49EDE53F21F59079003B4A16 /* shadowView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49EDE54121F5A4AF003B4A16 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				49EDE54221F5A4B9003B4A16 /* Controller */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		49EDE54221F5A4B9003B4A16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49EDE54321F5A4CB003B4A16 /* SignInVC.h */,
+				49EDE54421F5A4CB003B4A16 /* SignInVC.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4937AB0221F584DB000E63DB /* ViewController.m in Sources */,
+				49EDE54021F59079003B4A16 /* shadowView.m in Sources */,
 				4937AB0D21F584DD000E63DB /* main.m in Sources */,
+				49EDE54521F5A4CB003B4A16 /* SignInVC.m in Sources */,
+				49EDE53A21F58B5C003B4A16 /* HomePageVC.m in Sources */,
 				4937AAFF21F584DB000E63DB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

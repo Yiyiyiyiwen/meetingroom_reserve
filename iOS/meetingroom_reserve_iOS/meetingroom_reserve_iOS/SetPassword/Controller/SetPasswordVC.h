@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SetPasswordVC : UIViewController
 @property (nonatomic , strong) NSString *verStr;
+@property (nonatomic, strong) NSMutableDictionary* signInRequestDic;
 @end
 
 NS_ASSUME_NONNULL_END

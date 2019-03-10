@@ -9,10 +9,12 @@
 #import "VerificationCodeVC.h"
 #import "VerificationCodeView.h"
 #import "SetPasswordVC.h"
+#import "AFNetworking.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface VerificationCodeVC ()
-
+@property (nonatomic, strong) NSString* vCode;//服务器返回的验证码
+@property (nonatomic, strong) VerificationCodeView* mainView;
 @end
 
 @implementation VerificationCodeVC
@@ -44,9 +46,9 @@
     telCheckLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:telCheckLabel];
     //验证码输入
-    VerificationCodeView *mainView = [[VerificationCodeView alloc]initWithCount:4 margin:SCREEN_WIDTH*0.2/3.0];
-    mainView.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.2+SCREEN_WIDTH*0.1+SCREEN_WIDTH*0.06, SCREEN_WIDTH*0.9, SCREEN_HEIGHT*0.2);
-    [self.view addSubview:mainView];
+    self.mainView = [[VerificationCodeView alloc]initWithCount:6 margin:SCREEN_WIDTH*0.2/3.0];
+    self.mainView.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.2+SCREEN_WIDTH*0.1+SCREEN_WIDTH*0.06, SCREEN_WIDTH*0.9, SCREEN_HEIGHT*0.2);
+    [self.view addSubview:self.mainView];
     //重新发送验证码
     UIButton *retryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [retryBtn setTitle:@"重发验证码" forState:UIControlStateNormal];
@@ -66,6 +68,21 @@
     nextStep.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.6, SCREEN_WIDTH*0.9, SCREEN_WIDTH*0.13);
     [nextStep addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextStep];
+    //请求的url
+    NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/public/see_msg/";
+    NSString *totalString = [urlString stringByAppendingString:self.telNum];
+    //请求的managers
+    AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+    //请求
+    [managers GET:totalString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+        NSString *data = [responseObject objectForKey:@"data"];
+        self.vCode = data;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败,服务器返回的错误信息%@",error);
+    }];
+//    NSLog(@"%@",self.signInRequestDic);
 }
 
 //重发验证码
@@ -75,10 +92,20 @@
 
 //下一步
 - (void) next{
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    SetPasswordVC *vc = [sb instantiateViewControllerWithIdentifier:@"SetPassword"];
-    vc.verStr = @"验证码";
-    [self.navigationController pushViewController:vc animated:YES];
+    if ([self.mainView.code isEqualToString:self.vCode]) {
+        [self.signInRequestDic setValue:self.vCode forKey:@"msg"];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        SetPasswordVC *vc = [sb instantiateViewControllerWithIdentifier:@"SetPassword"];
+        vc.signInRequestDic = self.signInRequestDic;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        NSString* errorMsg = @"验证码不正确";
+        // 初始化对话框
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        // 弹出对话框
+        [self presentViewController:alert animated:true completion:nil];
+    }
 }
 
 //键盘弹回

@@ -9,6 +9,8 @@
 //
 
 #import "HomePageVC.h"
+#import "shadowView.h"
+#import "SignInVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface HomePageVC ()
@@ -25,53 +27,34 @@
 - (void)initUI{
     self.view.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:229.0/255.0 blue:234.0/255.0 alpha:1.0];
     //当前会议室
-    UIView *currentMeetingRoom = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.05, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.9)];
-    currentMeetingRoom.backgroundColor = [UIColor clearColor];
-    UIBezierPath *shadowPath1 = [UIBezierPath
-                                bezierPathWithRect:currentMeetingRoom.bounds];
-    currentMeetingRoom.layer.masksToBounds = NO;
-    currentMeetingRoom.layer.shadowColor = [UIColor blackColor].CGColor;
-    currentMeetingRoom.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
-    currentMeetingRoom.layer.shadowOpacity = 0.5f;
-    currentMeetingRoom.layer.shadowPath = shadowPath1.CGPath;
+    shadowView *currentMeetingRoom = [[shadowView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.05, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.9)];
+    [currentMeetingRoom createLargeView:@"当前会议室"];
     [self.view addSubview:currentMeetingRoom];
-    UIView *innerView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, currentMeetingRoom.frame.size.width, currentMeetingRoom.frame.size.height)];
-    innerView1.backgroundColor = [UIColor whiteColor];
-    innerView1.layer.masksToBounds = YES;
-    innerView1.layer.cornerRadius = 10;
-    [currentMeetingRoom addSubview:innerView1];
+    shadowView *roomDetail = [[shadowView alloc]initWithFrame:CGRectMake(currentMeetingRoom.frame.size.width*0.1, currentMeetingRoom.frame.size.width*0.3, currentMeetingRoom.frame.size.width*0.8, currentMeetingRoom.frame.size.width*0.2)];
+    [roomDetail createSmallView:@"301会议室" withImage:[UIImage imageNamed:@"会议室"]];
+    [currentMeetingRoom addSubview:roomDetail];
     //显示全部
-    UIView *showAll = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.55, SCREEN_HEIGHT*0.05, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.4)];
-    showAll.backgroundColor = [UIColor clearColor];
-    UIBezierPath *shadowPath2 = [UIBezierPath
-                                bezierPathWithRect:showAll.bounds];
-    showAll.layer.masksToBounds = NO;
-    showAll.layer.shadowColor = [UIColor blackColor].CGColor;
-    showAll.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
-    showAll.layer.shadowOpacity = 0.5f;
-    showAll.layer.shadowPath = shadowPath2.CGPath;
+    shadowView *showAll = [[shadowView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.55, SCREEN_HEIGHT*0.05, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.4)];
+    [showAll createLargeView:@"我要预订"];
     [self.view addSubview:showAll];
-    UIView *innerView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, showAll.frame.size.width, showAll.frame.size.height)];
-    innerView2.backgroundColor = [UIColor whiteColor];
-    innerView2.layer.masksToBounds = YES;
-    innerView2.layer.cornerRadius = 10;
-    [showAll addSubview:innerView2];
+    shadowView *showDetail = [[shadowView alloc]initWithFrame:CGRectMake(showAll.frame.size.width*0.1, showAll.frame.size.width*0.3, showAll.frame.size.width*0.8, showAll.frame.size.width*0.2)];
+    [showDetail createSmallView:@"预订" withImage:[UIImage imageNamed:@"预定"]];
+    [showAll addSubview:showDetail];
     //签到
-    UIView *signIn = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.55, SCREEN_HEIGHT*0.55, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.4)];
-    signIn.backgroundColor = [UIColor clearColor];
-    UIBezierPath *shadowPath3 = [UIBezierPath
-                                 bezierPathWithRect:signIn.bounds];
-    signIn.layer.masksToBounds = NO;
-    signIn.layer.shadowColor = [UIColor blackColor].CGColor;
-    signIn.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
-    signIn.layer.shadowOpacity = 0.5f;
-    signIn.layer.shadowPath = shadowPath3.CGPath;
+    shadowView *signIn = [[shadowView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.55, SCREEN_HEIGHT*0.55, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.4)];
+    UITapGestureRecognizer *signin = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(signInAct)];
+    [signIn addGestureRecognizer:signin];
+    [signIn createLargeView:@"签到"];
     [self.view addSubview:signIn];
-    UIView *innerView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, signIn.frame.size.width, signIn.frame.size.height)];
-    innerView3.backgroundColor = [UIColor whiteColor];
-    innerView3.layer.masksToBounds = YES;
-    innerView3.layer.cornerRadius = 10;
-    [signIn addSubview:innerView3];
+    shadowView *signInDetail = [[shadowView alloc]initWithFrame:CGRectMake(signIn.frame.size.width*0.1, signIn.frame.size.width*0.3, signIn.frame.size.width*0.8, signIn.frame.size.width*0.2)];
+    [signInDetail createSmallView:@"签到" withImage:[UIImage imageNamed:@"人脸识别"]];
+    [signIn addSubview:signInDetail];
+}
+
+- (void)signInAct{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    SignInVC *vc = [sb instantiateViewControllerWithIdentifier:@"SignIn"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end

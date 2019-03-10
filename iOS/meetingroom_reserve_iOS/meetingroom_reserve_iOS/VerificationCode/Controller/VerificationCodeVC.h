@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VerificationCodeVC : UIViewController
 @property (nonatomic , strong) NSString *telNum;
+@property (nonatomic, strong) NSMutableDictionary* signInRequestDic;
 @end
 
 NS_ASSUME_NONNULL_END
