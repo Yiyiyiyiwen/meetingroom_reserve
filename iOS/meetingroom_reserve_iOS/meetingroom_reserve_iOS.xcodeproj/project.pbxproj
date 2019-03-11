@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490A4FBF21B506E4004836D3 /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FBE21B506E4004836D3 /* SignInVC.m */; };
 		490A4FC521B509A9004836D3 /* SignInNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A4FC421B509A9004836D3 /* SignInNav.m */; };
+		4935F7512235EF2200544CB1 /* SetUserNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935F7502235EF2200544CB1 /* SetUserNameVC.m */; };
 		4937812F21F8410500E52F52 /* YCPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937812E21F8410500E52F52 /* YCPickerView.m */; };
 		4937813321F84D6B00E52F52 /* DataPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4937813221F84D6B00E52F52 /* DataPickerView.m */; };
 		49402CE421BD02A0004F9CCE /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49402CE321BD02A0004F9CCE /* MyCell.m */; };
@@ -44,6 +45,11 @@
 		49C7A24621FAE5C500C7CEBF /* GenralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A24521FAE5C500C7CEBF /* GenralVC.m */; };
 		49C7A24921FAE5D400C7CEBF /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A24821FAE5D400C7CEBF /* AboutVC.m */; };
 		49D58F0D21F6E8A300E0B714 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */; };
+		49DB0C942235542A006FE2EB /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB0C8A22355429006FE2EB /* SVRadialGradientLayer.m */; };
+		49DB0C952235542A006FE2EB /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB0C8D22355429006FE2EB /* SVProgressAnimatedView.m */; };
+		49DB0C962235542A006FE2EB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB0C9022355429006FE2EB /* SVProgressHUD.m */; };
+		49DB0C972235542A006FE2EB /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB0C9122355429006FE2EB /* SVIndefiniteAnimatedView.m */; };
+		49DB0C982235542A006FE2EB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49DB0C9222355429006FE2EB /* SVProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,8 @@
 		490A4FBE21B506E4004836D3 /* SignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 		490A4FC321B509A9004836D3 /* SignInNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNav.h; sourceTree = "<group>"; };
 		490A4FC421B509A9004836D3 /* SignInNav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNav.m; sourceTree = "<group>"; };
+		4935F74F2235EF2200544CB1 /* SetUserNameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUserNameVC.h; sourceTree = "<group>"; };
+		4935F7502235EF2200544CB1 /* SetUserNameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetUserNameVC.m; sourceTree = "<group>"; };
 		4937812D21F8410500E52F52 /* YCPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCPickerView.h; sourceTree = "<group>"; };
 		4937812E21F8410500E52F52 /* YCPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCPickerView.m; sourceTree = "<group>"; };
 		4937813121F84D6B00E52F52 /* DataPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataPickerView.h; sourceTree = "<group>"; };
@@ -140,6 +148,16 @@
 		49C7A24821FAE5D400C7CEBF /* AboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		49D58F0B21F6E8A200E0B714 /* SelectPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
 		49D58F0C21F6E8A300E0B714 /* SelectPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoManager.m; sourceTree = "<group>"; };
+		49DB0C8A22355429006FE2EB /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		49DB0C8B22355429006FE2EB /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		49DB0C8C22355429006FE2EB /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		49DB0C8D22355429006FE2EB /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		49DB0C8E22355429006FE2EB /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		49DB0C8F22355429006FE2EB /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		49DB0C9022355429006FE2EB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		49DB0C9122355429006FE2EB /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		49DB0C9222355429006FE2EB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		49DB0C9322355429006FE2EB /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +202,23 @@
 				490A4FC421B509A9004836D3 /* SignInNav.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4935F74D2235EEE400544CB1 /* SetUserName */ = {
+			isa = PBXGroup;
+			children = (
+				4935F74E2235EF0200544CB1 /* Controller */,
+			);
+			path = SetUserName;
+			sourceTree = "<group>";
+		};
+		4935F74E2235EF0200544CB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4935F74F2235EF2200544CB1 /* SetUserNameVC.h */,
+				4935F7502235EF2200544CB1 /* SetUserNameVC.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		494E044821FEFA1500CD1E6E /* AFNetworking */ = {
@@ -346,8 +381,10 @@
 		49A3BDCC21B235BB00123F30 /* meetingroom_reserve_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				49DB0C8922355429006FE2EB /* SVProgressHUD */,
 				494E044821FEFA1500CD1E6E /* AFNetworking */,
 				4990B7BC21BB4EA900041205 /* Reserve */,
+				4935F74D2235EEE400544CB1 /* SetUserName */,
 				49753B8721F1D27C003ACE0C /* SetPassword */,
 				4959050B21F04F61009B2F9C /* VerificationCode */,
 				4990B7AC21BB493E00041205 /* ForgetPasspord */,
@@ -407,6 +444,23 @@
 				49A3BE0121B25B3500123F30 /* LogInVC.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49DB0C8922355429006FE2EB /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				49DB0C8A22355429006FE2EB /* SVRadialGradientLayer.m */,
+				49DB0C8B22355429006FE2EB /* SVIndefiniteAnimatedView.h */,
+				49DB0C8C22355429006FE2EB /* SVProgressHUD.h */,
+				49DB0C8D22355429006FE2EB /* SVProgressAnimatedView.m */,
+				49DB0C8E22355429006FE2EB /* SVProgressHUD-Prefix.pch */,
+				49DB0C8F22355429006FE2EB /* SVRadialGradientLayer.h */,
+				49DB0C9022355429006FE2EB /* SVProgressHUD.m */,
+				49DB0C9122355429006FE2EB /* SVIndefiniteAnimatedView.m */,
+				49DB0C9222355429006FE2EB /* SVProgressHUD.bundle */,
+				49DB0C9322355429006FE2EB /* SVProgressAnimatedView.h */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +569,7 @@
 				49A3BDDA21B235BD00123F30 /* LaunchScreen.storyboard in Resources */,
 				49A3BDD721B235BD00123F30 /* Assets.xcassets in Resources */,
 				49A3BDD521B235BB00123F30 /* Main.storyboard in Resources */,
+				49DB0C982235542A006FE2EB /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,12 +603,17 @@
 				494E045921FEFA1500CD1E6E /* AFURLSessionManager.m in Sources */,
 				49A3BDDD21B235BD00123F30 /* main.m in Sources */,
 				4994D53121F0A82B006F4C16 /* NoteVC.m in Sources */,
+				49DB0C952235542A006FE2EB /* SVProgressAnimatedView.m in Sources */,
 				49A3BDCF21B235BB00123F30 /* AppDelegate.m in Sources */,
+				49DB0C972235542A006FE2EB /* SVIndefiniteAnimatedView.m in Sources */,
+				49DB0C942235542A006FE2EB /* SVRadialGradientLayer.m in Sources */,
 				4959051821F06B7D009B2F9C /* PersonalInfoVC.m in Sources */,
 				4937812F21F8410500E52F52 /* YCPickerView.m in Sources */,
+				4935F7512235EF2200544CB1 /* SetUserNameVC.m in Sources */,
 				49C7A24621FAE5C500C7CEBF /* GenralVC.m in Sources */,
 				4990B7C821BB591F00041205 /* ReserveVC.m in Sources */,
 				4990B7C221BB4F0000041205 /* ReserveTabbarController.m in Sources */,
+				49DB0C962235542A006FE2EB /* SVProgressHUD.m in Sources */,
 				49402CE421BD02A0004F9CCE /* MyCell.m in Sources */,
 				49C7A24921FAE5D400C7CEBF /* AboutVC.m in Sources */,
 				4959051121F04FD2009B2F9C /* VerificationCodeVC.m in Sources */,

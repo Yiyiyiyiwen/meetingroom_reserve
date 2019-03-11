@@ -12,6 +12,7 @@
 #import "ForgetPwdNav.h"
 #import "ReserveTabbarController.h"
 #import "AFNetworking.h"
+#import "SVProgressHUD.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface LogInVC ()
@@ -160,6 +161,11 @@
 
 //登录
 - (void) login{
+    [SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];
+    [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
+    [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD show];
     UITextField *telNum = (UITextField *)[self.view  viewWithTag:1];
     UITextField *pwd = (UITextField *)[self.view viewWithTag:2];
     //获取输入的账号密码
@@ -175,16 +181,18 @@
     //请求的managers
     AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
     //请求的方式：POST
-    [managers POST:urlString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [managers GET:urlString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"进度");
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功，服务器返回的信息%@",responseObject);
         NSString *data = [responseObject objectForKey:@"msg"];
         if ([data isEqualToString:@"SUCCESS"]) {
+            [SVProgressHUD dismiss];
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             ReserveTabbarController *reserveTabbarController = [sb instantiateViewControllerWithIdentifier:@"reserve"];
             [self presentViewController:reserveTabbarController animated:YES completion:nil];
         }else{
+            [SVProgressHUD dismiss];
             NSString* errorMsg = @"账号或密码有误";
             // 初始化对话框
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
@@ -193,6 +201,7 @@
             [self presentViewController:alert animated:true completion:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
         NSLog(@"请求失败,服务器返回的错误信息%@",error);
         NSString* errorMsg = @"请求失败！";
         // 初始化对话框

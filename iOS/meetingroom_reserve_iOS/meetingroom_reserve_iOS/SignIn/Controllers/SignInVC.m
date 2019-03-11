@@ -10,6 +10,7 @@
 #import "SetPasswordVC.h"
 #import "VerificationCodeVC.h"
 #import "AFNetworking.h"
+#import "SVProgressHUD.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface SignInVC ()
@@ -81,6 +82,11 @@
 
 - (void) next{
     if ([self valiMobile:self.telText.text]) {
+        [SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];
+        [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
+        [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD show];
         NSString *telNumber = self.telText.text;
         //请求的参数
         NSDictionary *parameters = @{
@@ -96,6 +102,8 @@
             NSLog(@"请求成功，服务器返回的信息%@",responseObject);
             self.signInRequestDic = [[NSMutableDictionary alloc]init];
             [self.signInRequestDic setValue:telNumber forKey:@"phone"];
+            [self.signInRequestDic setValue:@"0" forKey:@"signinOrForget"];//注册页标记0
+            [SVProgressHUD dismiss];
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             VerificationCodeVC *vc = [sb instantiateViewControllerWithIdentifier:@"VerificationCode"];
             vc.telNum = self.telText.text;

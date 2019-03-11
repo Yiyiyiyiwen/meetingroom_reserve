@@ -7,7 +7,7 @@
 //
 
 #import "SetPasswordVC.h"
-#import "LogInVC.h"
+#import "SetUserNameVC.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface SetPasswordVC ()<UITextFieldDelegate>
@@ -91,7 +91,7 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    NSLog(@"%@",self.signInRequestDic);
+//    NSLog(@"%@",self.signInRequestDic);
 }
 
 //当键盘出现或改变时调用
@@ -120,7 +120,15 @@
 
 //下一步
 - (void) next{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSString *sof = [self.signInRequestDic objectForKey:@"signinOrForget"];
+    if ([sof isEqualToString:@"0"]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        SetUserNameVC *vc = [sb instantiateViewControllerWithIdentifier:@"setUserName"];
+        vc.signInRequestDic = self.signInRequestDic;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)eyeTouch:(UIButton *)sender{
