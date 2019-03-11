@@ -80,11 +80,11 @@
 }
 
 - (void) next{
+    [SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];
+    [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
+    [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     if ([self valiMobile:self.telText.text]) {
-        [SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];
-        [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
-        [SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];
-        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
         [SVProgressHUD show];
         NSString *telNumber = self.telText.text;
         //请求的参数
@@ -110,16 +110,13 @@
             [self.navigationController pushViewController:vc animated:YES];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             NSLog(@"请求失败,服务器返回的错误信息%@",error);
-            NSString* errorMsg = @"请求失败！";
-            // 初始化对话框
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-            // 弹出对话框
-            [self presentViewController:alert animated:true completion:nil];
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }];
         
     }else{
-        [self showError:@"手机号码有误，请重新输入!"];
+        [SVProgressHUD showErrorWithStatus:@"手机号码格式不正确"];
+        [SVProgressHUD dismissWithDelay:1.0];
     }
 }
 
@@ -170,14 +167,5 @@
             return NO;
         }
     }
-}
-
-// 提示错误信息
-- (void)showError:(NSString *)errorMsg {
-    // 初始化对话框
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-    // 弹出对话框
-    [self presentViewController:alert animated:true completion:nil];
 }
 @end

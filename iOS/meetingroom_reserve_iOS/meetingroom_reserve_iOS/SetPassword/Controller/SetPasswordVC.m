@@ -8,6 +8,7 @@
 
 #import "SetPasswordVC.h"
 #import "SetUserNameVC.h"
+#import "SVProgressHUD.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface SetPasswordVC ()<UITextFieldDelegate>
@@ -52,6 +53,7 @@
     self.line.backgroundColor = [UIColor lightGrayColor];
     [passwordView addSubview:self.line];
     self.pwdText = [[UITextField alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT*0.04, pWidth*0.9, SCREEN_HEIGHT*0.075)];
+    self.pwdText.keyboardType = UIKeyboardTypeASCIICapable;
     self.pwdText.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.pwdText.placeholder = @"请输入密码";
     self.pwdText.delegate = self;
@@ -74,7 +76,12 @@
     nextStep.tag = 3;
     [nextStep.layer setMasksToBounds:YES];
     [nextStep.layer setCornerRadius:5.0];
-    [nextStep setTitle:@"下一步" forState:UIControlStateNormal];
+    NSString *sof = [self.signInRequestDic objectForKey:@"signinOrForget"];
+    if ([sof isEqualToString:@"0"]) {
+        [nextStep setTitle:@"下一步" forState:UIControlStateNormal];
+    }else{
+        [nextStep setTitle:@"完成" forState:UIControlStateNormal];
+    }
     [nextStep setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [nextStep setBackgroundColor:[UIColor colorWithRed:97.0/255.0 green:134.0/255.0 blue:220.0/255.0 alpha:1.0]];
     nextStep.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.34+SCREEN_WIDTH*0.3+30, SCREEN_WIDTH*0.9, SCREEN_WIDTH*0.13);
@@ -122,12 +129,24 @@
 - (void) next{
     NSString *sof = [self.signInRequestDic objectForKey:@"signinOrForget"];
     if ([sof isEqualToString:@"0"]) {
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        SetUserNameVC *vc = [sb instantiateViewControllerWithIdentifier:@"setUserName"];
-        vc.signInRequestDic = self.signInRequestDic;
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([self valiPassword:self.pwdText.text]) {
+            [self.signInRequestDic setValue:self.pwdText.text forKey:@"password"];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            SetUserNameVC *vc = [sb instantiateViewControllerWithIdentifier:@"setUserName"];
+            vc.signInRequestDic = self.signInRequestDic;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"密码格式不正确"];
+            [SVProgressHUD dismissWithDelay:1.0];
+        }
     }else{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if ([self valiPassword:self.pwdText.text]) {
+            [self.signInRequestDic setValue:self.pwdText.text forKey:@"password"];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"密码格式不正确"];
+            [SVProgressHUD dismissWithDelay:1.0];
+        }
     }
 }
 
@@ -163,7 +182,7 @@
 //密码格式判断
 - (BOOL)valiPassword:(NSString *)password{
     password = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
-    if (password.length > 20){
+    if (password.length > 20 || password.length < 6){
         return NO;
     }else{
         return YES;

@@ -193,22 +193,14 @@
             [self presentViewController:reserveTabbarController animated:YES completion:nil];
         }else{
             [SVProgressHUD dismiss];
-            NSString* errorMsg = @"账号或密码有误";
-            // 初始化对话框
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-            // 弹出对话框
-            [self presentViewController:alert animated:true completion:nil];
+            [SVProgressHUD showErrorWithStatus:@"账号或密码有误"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         NSLog(@"请求失败,服务器返回的错误信息%@",error);
-        NSString* errorMsg = @"请求失败！";
-        // 初始化对话框
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        // 弹出对话框
-        [self presentViewController:alert animated:true completion:nil];
+        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismissWithDelay:1.0];
     }];
 //    if ([telNum.text isEqualToString:@"1"]&&[pwd.text isEqualToString:@"1"]) {
 //        [[NSUserDefaults standardUserDefaults] setObject:telNum.text forKey:@"tel"];

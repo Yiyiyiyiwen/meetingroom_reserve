@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self UISetting];
-//    NSLog(@"%@",self.signInRequestDic);
 }
 
 //UI布局
@@ -62,13 +61,49 @@
 }
 
 - (void) finish{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.signInRequestDic setValue:self.telText.text forKey:@"name"];
+    NSString *phone = [self.signInRequestDic objectForKey:@"phone"];
+    NSString *password = [self.signInRequestDic objectForKey:@"password"];
+    NSString *msg = [self.signInRequestDic objectForKey:@"msg"];
+    NSString *name = [self.signInRequestDic objectForKey:@"name"];
+    NSDictionary *parameters = @{
+                                 @"phone":phone,
+                                 @"password":password,
+                                 @"msg":msg,
+                                 @"name":name
+                                 };
+    NSLog(@"%@",parameters);
+    NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/user/register";
+    //请求的managers
+    AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+    //请求
+    [managers GET:urlString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+        [SVProgressHUD dismiss];
+        NSString *msg = [responseObject objectForKey:@"msg"];
+        if ([msg isEqualToString:@"SUCCESS"]) {
+            [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+            [SVProgressHUD dismissWithDelay:1.0];
+        }else if ([msg isEqualToString:@"USER_HAS_EXIST"]){
+            [SVProgressHUD showErrorWithStatus:@"用户已存在"];
+            [SVProgressHUD dismissWithDelay:1.0];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"注册失败"];
+            [SVProgressHUD dismissWithDelay:1.0];
+        }
+        [NSThread sleepForTimeInterval:1.0];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败,服务器返回的错误信息%@",error);
+        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismissWithDelay:1.0];
+    }];
 }
 
 
-//电话键盘监听
+//键盘监听
 - (void)textFieldDidChange:(UITextField *)textField{
-    
 }
 
 //键盘弹回

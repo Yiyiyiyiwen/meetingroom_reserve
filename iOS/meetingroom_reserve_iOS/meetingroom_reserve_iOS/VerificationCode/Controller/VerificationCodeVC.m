@@ -10,6 +10,7 @@
 #import "VerificationCodeView.h"
 #import "SetPasswordVC.h"
 #import "AFNetworking.h"
+#import "SVProgressHUD.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface VerificationCodeVC ()
@@ -82,12 +83,51 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败,服务器返回的错误信息%@",error);
     }];
+    
 //    NSLog(@"%@",self.signInRequestDic);
 }
 
 //重发验证码
 - (void) retry{
-    NSLog(@"retry");
+    [SVProgressHUD show];
+    NSString *telNumber = self.telNum;
+    //请求的参数
+    NSDictionary *parameters = @{
+                                 @"phone":telNumber
+                                 };
+    //请求的url
+    NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/public/send_msg";
+    //请求的managers
+    AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+    //请求
+    [managers GET:urlString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败,服务器返回的错误信息%@",error);
+        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismissWithDelay:1.0];
+    }];
+    //请求的url
+    NSString *url = @"http://fc2018.bwg.moyinzi.top/api/public/see_msg/";
+    NSString *totalString = [url stringByAppendingString:self.telNum];
+    //请求的managers
+    AFHTTPSessionManager *ms = [AFHTTPSessionManager manager];
+    //请求
+    [ms GET:totalString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+        NSString *data = [responseObject objectForKey:@"data"];
+        self.vCode = data;
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"验证码发送成功"];
+        [SVProgressHUD dismissWithDelay:1.0];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败,服务器返回的错误信息%@",error);
+        [SVProgressHUD showErrorWithStatus:@"请求失败"];
+        [SVProgressHUD dismissWithDelay:1.0];
+    }];
+    
 }
 
 //下一步
@@ -99,12 +139,8 @@
         vc.signInRequestDic = self.signInRequestDic;
         [self.navigationController pushViewController:vc animated:YES];
     }else{
-        NSString* errorMsg = @"验证码不正确";
-        // 初始化对话框
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:errorMsg preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        // 弹出对话框
-        [self presentViewController:alert animated:true completion:nil];
+        [SVProgressHUD showErrorWithStatus:@"验证码不正确"];
+        [SVProgressHUD dismissWithDelay:1.0];
     }
 }
 
