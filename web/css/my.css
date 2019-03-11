@@ -26,3 +26,15 @@
 .add{
     float: right;
 }
+.infor-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px #bbbbbb solid; 
+    align-items: center;
+}
+.infor-details img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}

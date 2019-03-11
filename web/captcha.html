@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>输入验证码</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
@@ -20,25 +21,26 @@
                 </div>
             </div> -->
             <div class="right">
-                    <div class="title">请输入验证码</div>
-                    <div class="top">
-                        <span>验证码已发送至手机：+86</span>
-                        <span id="phone"></span>
-                    </div>
-                    <div class="myinput">
-                        <input type="number" class="input-lg" id="name" placeholder="请输入验证码">
-                    </div>
-                    <div class="top">重发验证码</div>
-                    <button type="button" class="mybutton" onclick="next()">下一步</button>
+                <div class="title">请输入验证码</div>
+                <div class="top">
+                    <span>验证码已发送至手机：+86</span>
+                    <span id="phone"></span>
                 </div>
+                <div class="myinput">
+                    <input type="number" class="input-lg" id="name" placeholder="请输入验证码">
+                </div>
+                <div class="top">重发验证码</div>
+                <button type="button" class="mybutton" onclick="next()">下一步</button>
+            </div>
         </div>
-        
+
     </div>
     </div>
 
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/config.js"></script>
     <script>
         var loc = location.href;
         var n1 = loc.length;//地址的总长度
@@ -51,7 +53,16 @@
             window.location.href = "meeting.html"
         }
 
-
+        var baseurl = window.globalConfig.url
+        $.ajax({
+            url: baseurl + "/api/public/send_msg?phone=" + myinput,
+            headers:{
+                'Content-Type':'application/json'
+            },
+            success: function (data) {
+                console.log(data)
+            }
+        })
     </script>
 </body>
 

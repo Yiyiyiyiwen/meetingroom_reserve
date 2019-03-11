@@ -26,13 +26,13 @@
                 <button type="button" class="mybutton" onclick="getphone()">下一步</button>
             </div>
         </div>
-
     </div>
     </div>
 
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/config.js"></script>
     <script>
         function getphone() {
             var myinput = $('#phone').val()
@@ -40,6 +40,8 @@
             window.location.href = "captcha.html?myinput=" + myinput
         }
 
+        console.log(window.globalConfig.url)
+        
     </script>
 </body>
 
