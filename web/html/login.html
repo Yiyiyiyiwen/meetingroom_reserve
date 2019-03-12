@@ -33,23 +33,40 @@
                 <div class="myinput">
                     <!-- <span class="number">+86</span>
                             <span class="number">|</span> -->
-                    <input type="text" class="input-lg" id="name" placeholder="请输入手机号码">
+                    <input type="text" class="input-lg" id="phone" placeholder="请输入手机号码">
                 </div>
 
                 <div class="top">密码</div>
                 <div class="passwordinput">
-                    <input type="text" class="input-lg" id="name" placeholder="请输入密码">
+                    <input type="password" class="input-lg" id="password" placeholder="请输入密码">
                 </div>
                 <div class="forget">
                         忘记密码
                     </div>
-                <button type="button" class="mybutton">登录</button>
+                <button type="button" class="mybutton" onclick="next()">登录</button>
               
             </div>
         </div>
         </div>
     </div>
 
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        var phone = $('#phone').val()
+        var password = $('#password').val()
+        function next(){
+            $(function () {
+            $.get("/api/user/login", {phone:phone,password:password}, function (result) {
+                console.log(result)
+                confirm("登陆成功")
+                window.location.href = "meeting.html"
+            })
+        })
+
+        
+        }
+        
+    </script>
 </body>
 
 </html>

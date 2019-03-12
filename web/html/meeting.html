@@ -361,6 +361,15 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/simplecalendar.js"></script>
+
+
+    <script>
+        var name = localStorage.getItem("name")
+        var phone = localStorage.getItem("phone")
+
+        $(".name").html(name)
+        $(".describe").html(phone)
+    </script>
 </body>
 
 </html>
