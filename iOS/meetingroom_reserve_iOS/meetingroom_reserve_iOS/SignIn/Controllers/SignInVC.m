@@ -78,6 +78,7 @@
     nextStep.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.48, SCREEN_WIDTH*0.9, SCREEN_WIDTH*0.13);
     [nextStep addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextStep];
+    [self.telText becomeFirstResponder];
 }
 
 - (void) next{

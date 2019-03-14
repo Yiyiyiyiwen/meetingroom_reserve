@@ -99,6 +99,7 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
 //    NSLog(@"%@",self.signInRequestDic);
+    [self.pwdText becomeFirstResponder];
 }
 
 //当键盘出现或改变时调用

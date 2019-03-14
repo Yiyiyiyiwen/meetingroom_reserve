@@ -10,6 +10,8 @@
 #import "PrivacyVC.h"
 #import "GenralVC.h"
 #import "AboutVC.h"
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
 @interface SettingsVC ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -91,17 +93,37 @@
             }]];
             [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
                 //获取UserDefaults单例
-                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                 //移除UserDefaults中存储的用户信息
-                [userDefaults removeObjectForKey:@"tel"];
-                [userDefaults removeObjectForKey:@"password"];
-                [userDefaults synchronize];
-                //获取storyboard
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                //获取注销后要跳转的页面
-                id view = [storyboard instantiateViewControllerWithIdentifier:@"LogIn"];
-                //模态展示出登陆页面
-                [self presentViewController:view animated:YES completion:^{
+//                [userDefaults removeObjectForKey:@"tel"];
+//                [userDefaults removeObjectForKey:@"password"];
+//                [userDefaults synchronize];
+                [SVProgressHUD show];
+                NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/user/logout";
+                //请求的managers
+                AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+                //请求
+                [managers GET:urlString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+                } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+                    [SVProgressHUD dismiss];
+                    NSString *msg = [responseObject objectForKey:@"msg"];
+                    if ([msg isEqualToString:@"USER_LOGOUT"]) {
+                        [SVProgressHUD showSuccessWithStatus:@"退出成功"];
+                        [SVProgressHUD dismissWithDelay:1.0];
+                        //获取storyboard
+                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                        //获取注销后要跳转的页面
+                        id view = [storyboard instantiateViewControllerWithIdentifier:@"LogIn"];
+                        //模态展示出登陆页面
+                        [self presentViewController:view animated:YES completion:^{
+                        }];
+                    }
+                    [NSThread sleepForTimeInterval:1.0];
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    NSLog(@"请求失败,服务器返回的错误信息%@",error);
+                    [SVProgressHUD showErrorWithStatus:@"请求失败"];
+                    [SVProgressHUD dismissWithDelay:1.0];
                 }];
             }]];
             [self presentViewController:alertController animated:YES completion:nil];

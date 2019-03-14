@@ -80,10 +80,11 @@
         NSLog(@"请求成功，服务器返回的信息%@",responseObject);
         NSString *data = [responseObject objectForKey:@"data"];
         self.vCode = data;
+        [self showAlert:data];
+        [self.mainView becomeFirstResponder];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败,服务器返回的错误信息%@",error);
     }];
-    
 //    NSLog(@"%@",self.signInRequestDic);
 }
 
@@ -122,6 +123,8 @@
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"验证码发送成功"];
         [SVProgressHUD dismissWithDelay:1.0];
+        [self showAlert:data];
+        [self.mainView becomeFirstResponder];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败,服务器返回的错误信息%@",error);
         [SVProgressHUD showErrorWithStatus:@"请求失败"];
@@ -147,6 +150,14 @@
 //键盘弹回
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+}
+
+- (void)showAlert:(NSString*)info{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"验证码" message:info preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alertController addAction:action];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

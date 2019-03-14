@@ -58,9 +58,11 @@
     finish.frame = CGRectMake(SCREEN_WIDTH*0.05, SCREEN_HEIGHT*0.48, SCREEN_WIDTH*0.9, SCREEN_WIDTH*0.13);
     [finish addTarget:self action:@selector(finish) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:finish];
+    [self.telText becomeFirstResponder];
 }
 
 - (void) finish{
+    [SVProgressHUD show];
     [self.signInRequestDic setValue:self.telText.text forKey:@"name"];
     NSString *phone = [self.signInRequestDic objectForKey:@"phone"];
     NSString *password = [self.signInRequestDic objectForKey:@"password"];
@@ -72,7 +74,6 @@
                                  @"msg":msg,
                                  @"name":name
                                  };
-    NSLog(@"%@",parameters);
     NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/user/register";
     //请求的managers
     AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];

@@ -12,6 +12,7 @@
 #import "NoteVC.h"
 #import "CardsVC.h"
 #import "SettingsVC.h"
+#import "AFNetworking.h"
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 @interface MyVC ()<UITableViewDelegate, UITableViewDataSource>
@@ -51,10 +52,10 @@
     }
     self.tabBarController.tabBar.hidden = NO;
     UIImage *img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
-    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+//    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     if (img) {
         self.headImageView.image = img;
-        self.nameLabel.text = name;
+//        self.nameLabel.text = name;
     }
 }
 
@@ -91,10 +92,24 @@
         }
     } else {
     }
-    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-    self.nameLabel.text = name;
+    //请求的url
+    NSString *urlString = @"http://fc2018.bwg.moyinzi.top/api/user/info";
+    //请求的managers
+    AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+    //请求的方式：POST
+    [managers GET:urlString parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+        NSDictionary *response = (NSDictionary*) responseObject;
+        NSDictionary *data = [response objectForKey:@"data"];
+        NSString *realName = [data objectForKey:@"realName"];
+        self.nameLabel.text = realName;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败,服务器返回的错误信息%@",error);
+    }];
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
-    self.nameLabel.font = [UIFont systemFontOfSize:20];
+//    self.nameLabel.font = [UIFont systemFontOfSize:20];
+    self.nameLabel.adjustsFontSizeToFitWidth = YES;
     [topView addSubview:self.nameLabel];
     self.tableView.tableHeaderView = topView;
     self.tableView.tableFooterView = [[UIView alloc]init];
