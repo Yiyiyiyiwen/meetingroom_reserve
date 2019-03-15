@@ -61,7 +61,7 @@
 									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1"></td>
 									<td class="hidden-xs">项目组A</td>
 									<td>301会议室</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">空闲</button></td>
+									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">占用</button></td>
 									<td>
 										<div class="layui-inline">
 											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
@@ -71,11 +71,11 @@
 								</tr>
 								<tr id='node-2' class="parent collapsed">
 									<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-									<td class="hidden-xs">1</td>
+									<td class="hidden-xs">2</td>
 									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1"></td>
 									<td class="hidden-xs">项目组B</td>
 									<td>302会议室</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">空闲</button></td>
+									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">占用</button></td>
 									<td>
 										<div class="layui-inline">
 											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
@@ -85,11 +85,11 @@
 								</tr>
 								<tr id='node-3' class="parent collapsed">
 									<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-									<td class="hidden-xs">1</td>
+									<td class="hidden-xs">3</td>
 									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1"></td>
 									<td class="hidden-xs">项目组C</td>
 									<td>303会议室</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">空闲</button></td>
+									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">占用</button></td>
 									<td>
 										<div class="layui-inline">
 											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
@@ -107,7 +107,7 @@
 		<script src="../../static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			layui.use(['jquery'], function() {
-				var $=layui.jquery;
+				var $ = layui.jquery;
 				//修改状态
 				$('#table-list').on('click', '.table-list-status', function() {
 					var That = $(this);
@@ -140,6 +140,10 @@
 					}
 
 				})
+
+
+
+
 			});
 		</script>
 	</body>

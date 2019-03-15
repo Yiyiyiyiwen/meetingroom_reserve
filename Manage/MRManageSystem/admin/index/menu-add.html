@@ -48,7 +48,7 @@
 
 					<div class="layui-form-item">
 						<div class="layui-input-block">
-							<button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">立即提交</button>
+							<button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit_btn">立即提交</button>
 							<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 						</div>
 					</div>
@@ -58,15 +58,39 @@
 		<script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			//Demo
-			layui.use(['form'], function() {
+			layui.use(['form','jquery'], function() {
+			    var $ = layui.jquery;
 				var form = layui.form();
 				form.render();
+
+
 				//监听提交
 				form.on('submit(formDemo)', function(data) {
-					layer.msg(JSON.stringify(data.field));
-					return false;
+					// layer.msg(JSON.stringify(data.field));
+					layer.alert(data.desc);
+
 				});
+
+
+                $("#submit_btn").click(function (data) {
+
+                    //会议室添加请求
+                    // $.ajax({
+                    //     type: "post",
+                    //     url: "/api/sys/room?name=305会议室&addr=B座三层",
+                    //     dataType: "json",
+                    //     success: function (data) {
+                    //         alert(data.msg);
+                    //     },
+                    //     error:function (e) {
+                    //         alert('error');
+                    //     }
+                    // });
+
+                });
+
 			});
+
 		</script>
 	</body>
 

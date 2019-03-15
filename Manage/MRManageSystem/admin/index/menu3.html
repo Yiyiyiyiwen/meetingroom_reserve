@@ -16,7 +16,7 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-inline tool-btn">
-							<button class="layui-btn layui-btn-small layui-btn-normal addBtn hidden-xs" data-url="menu-add3.html"><i class="layui-icon">&#xe654;</i></button>
+							<button class="layui-btn layui-btn-small layui-btn-normal addBtn hidden-xs" data-url="menu-add3.html"><i class="layui-icon" onclick="">&#xe654;</i></button>
 							<button class="layui-btn layui-btn-small layui-btn-warm listOrderBtn hidden-xs" data-url="/admin/category/listorderall.html"><i class="iconfont">&#xe656;</i></button>
 						</div>
 						<div class="layui-inline">
@@ -98,6 +98,7 @@
 		</div>
 		<script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
+
 		<script>
 			layui.use(['form', 'jquery', 'layer', 'dialog'], function() {
 				var $ = layui.jquery;
@@ -108,15 +109,22 @@
 					var status = That.attr('data-status');
 					var id = That.parent().attr('data-id');
 					if(status == 1) {
-						That.removeClass('layui-btn-normal').addClass('layui-btn-warm').html('隐藏').attr('data-status', 2);
+						That.removeClass('layui-btn-normal').addClass('layui-btn-warm').html('开启').attr('data-status', 2);
 					} else if(status == 2) {
-						That.removeClass('layui-btn-warm').addClass('layui-btn-normal').html('显示').attr('data-status', 1);
+						That.removeClass('layui-btn-warm').addClass('layui-btn-normal').html('关闭').attr('data-status', 1);
 
 					}
 				})
 
 			});
+
+
+
 		</script>
+
+
+
+
 	</body>
 
 </html>

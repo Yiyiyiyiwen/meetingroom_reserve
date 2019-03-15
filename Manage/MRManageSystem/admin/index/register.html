@@ -16,7 +16,7 @@
             <div class="m-login-warp">
                 <form class="layui-form">
                     <div class="layui-form-item">
-                        <input type="text" name="title" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" required lay-verify="required" placeholder="手机号" autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-item">
                         <input type="text" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
@@ -25,12 +25,7 @@
                         <input type="text" name="Confirmpassword" required lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-inline">
                             <input type="text" name="verity" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-inline">
-                            <img class="verifyImg" onclick="this.src=this.src+'?c='+Math.random();" src="../../static/admin/images/login/yzm.jpg" />
-                        </div>
                     </div>
                     <div class="layui-form-item m-login-btn">
                         <div class="layui-inline">
@@ -46,7 +41,8 @@
     </div>
     <script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        layui.use(['form', 'layedit', 'laydate'], function() {
+        layui.use(['form', 'layedit', 'laydate','jquery'], function() {
+            var $ = layui.jquery;
             var form = layui.form(),
                 layer = layui.layer;
 
@@ -66,11 +62,24 @@
 
             //监听提交
             form.on('submit(login)', function(data) {
-                layer.alert(JSON.stringify(data.field), {
-                    title: '最终的提交信息'
-                })
-                return false;
+                $.ajax({
+                    url:"/api/user/register?phone=15011112222&password=123456&msg=248288&name=MagicDragon",
+                    data:"json",
+                    type:"GET",
+                    success:function () {
+                         window.location.href = "login.html";
+                    }
+                });
+
             });
+
+
+
+
+
+
+
+
 
         });
 

@@ -47,7 +47,7 @@
 					  <li class="layui-nav-item">
 					    <a href="javascript:;" data-url="admin-info.html" data-id='5' data-text="个人信息">管理员</a>
 					  </li>
-					  <li class="layui-nav-item"><a href="login.html">退出</a></li>
+					  <li class="layui-nav-item" id="signOut_btn"><a>退出</a></li>
 					</ul>
 				</div>
 				<!--主体内容-->
@@ -72,14 +72,33 @@
 				
 			</div>
 		</div>
-		<script type="text/javascript">
-			var scope={
-				link:'./welcome.html'
-			}
-		</script>
+
 		<script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/admin/js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+
+            layui.use(['form', 'layedit', 'laydate','jquery'], function() {
+               var $ = layui.jquery;
+               $("#signOut_btn").click(function () {
+				   $.ajax({
+						url:"/api/user/logout",
+					   	type:"GET",
+					   	success:function () {
+							window.location.href = "login.html";
+                        }
+
+				   });
+               });
+			});
+
+
+
+
+
+
+
+		</script>
 		
 	</body>
 </html>

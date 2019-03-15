@@ -16,7 +16,7 @@
             <div class="m-login-warp">
                 <form class="layui-form">
                     <div class="layui-form-item">
-                        <input type="text" name="title" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" required lay-verify="required" placeholder="手机号" autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-item">
                         <input type="text" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="layui-form-item m-login-btn">
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="login" onclick="jump()">登录</button>
+                            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="login" id="login_btn">登录</button>
                         </div>
                         <div class="layui-inline">
                             <button type="reset" class="layui-btn layui-btn-primary">取消</button>
@@ -44,7 +44,9 @@
     </div>
     <script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        layui.use(['form', 'layedit', 'laydate'], function() {
+        layui.use(['form', 'layedit', 'laydate','jquery'], function() {
+
+            var $ = layui.jquery;
             var form = layui.form(),
                 layer = layui.layer;
 
@@ -52,7 +54,7 @@
             //自定义验证规则
             form.verify({
                 title: function(value) {
-                    if(value.length < 5) {
+                    if(value.length < 5 ) {
                         return '标题至少得5个字符啊';
                     }
                 },
@@ -62,20 +64,31 @@
             });
 
 
-            //监听提交
-            form.on('submit(login)', function(data) {
-                layer.alert(JSON.stringify(data.field), {
-                    title: '最终的提交信息'
-                })
-                return false;
-            });
+            // //监听提交
+            // form.on('submit(login)', function(data) {
+            //     layer.alert(JSON.stringify(data.field), {
+            //         title: '最终的提交信息'
+            //     })
+            //     return false;
+            // });
+            
 
+
+            //登录按钮点击事件
+            $("#login_btn").click(function () {
+                //发送登陆请求之前先对用户名和密码进行校验
+                    $.ajax({
+                        url:"/api/user/login?phone=admin&password=123456",
+                        type:"GET",
+                        success:function () {
+                            window.location.href="index.html"
+                        }
+                    });
+            });
         });
 
-        //登录按钮跳转到index.html
-        function jump() {
-            window.location.href = "index.html";
-        }
+
+
     </script>
 
 </body>
