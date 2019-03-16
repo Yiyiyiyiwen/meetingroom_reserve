@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会议</title>
+    <link rel="stylesheet" href="/css/default.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/tabs.css" type="text/css">
+    <link rel="stylesheet" href="/css/meeting.css" type="text/css">
+
+</head>
+
+<body>
+    <div class="top">
+        <i class="fa fa-meetup"></i>&nbsp;
+        <div>智能会议室预定系统</div>
+
+        <i class="fa fa-sign-out"></i>&nbsp;
+    </div>
+    <!-- <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/resource/banner1.png" alt="First slide">
+            </div>
+            <div class="item">
+                <img src="/resource/banner2.png" alt="Second slide">
+            </div>
+            <div class="item">
+                <img src="/resource/banner3.png" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div> -->
+    <div class="content">
+        <div class="navs">
+            <div class="information">
+                    <h4 class="list-group-item-heading notetitle">
+                            <i class="fa fa-user-o"></i>&nbsp;个人资料
+                        </h4>
+                <div class="head">
+                    <img src="/resource/wangnima.png">
+                </div>
+                <div class="name">王尼玛</div>
+                <div class="describe">我是王尼玛我是王尼玛</div>
+            </div>
+            <ul class="nav nav-stacked">
+                <li class="active"><a href="/meeting.html"><i class="fa fa-home fa-lg"></i>&nbsp;主页</a></li>
+                <li><a href="/reserve.html"><i class="fa fa-check-square-o"></i>&nbsp;预定</a></li>
+                <li><a href="/data.html"><i class="fa fa-line-chart"></i>&nbsp;会议室数据</a></li>
+                <li><a href="/my.html"><i class="fa fa-user-circle"></i>&nbsp;我的</a></li>
+            </ul>
+        </div>
+        <div class="content-left">
+            <div class="col-md-4 col-lg-3 note">
+                <div class="list-group">
+                    <h4 class="list-group-item-heading notetitle">
+                        <i class="fa fa-hand-paper-o"></i>&nbsp;会议笔记
+                    </h4>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            开会时间：
+                        </h4>
+                        <p class="list-group-item-text">
+                            2018/12/11
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会地点：
+                        </h4>
+                        <p class="list-group-item-text">
+                            实B-207
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会主题：
+                        </h4>
+                        <p class="list-group-item-text">
+                            关于如何xxxxx
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            笔记：
+                        </h4>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                系统将所有的资源按类型进行线性排队，并赋予不同的序号
+                            </p>
+                        </div>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                序号必须相对稳定，限制了新设备类型的增加；
+                            </p>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            开会时间：
+                        </h4>
+                        <p class="list-group-item-text">
+                            2018/12/14
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会地点：
+                        </h4>
+                        <p class="list-group-item-text">
+                            实B-212
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            开会主题：
+                        </h4>
+                        <p class="list-group-item-text">
+                            关于如何xxxxx
+                        </p>
+                        <h4 class="list-group-item-heading">
+                            笔记：
+                        </h4>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                系统将所有的资源按类型进行线性排队，并赋予不同的序号
+                            </p>
+                        </div>
+                        <div class="mynote">
+                            <p class="list-group-item-text mynotes">
+                                序号必须相对稳定，限制了新设备类型的增加；
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4" id="notify">
+                <div class="list-group">
+                    <h4 class="list-group-item-heading notetitle">
+                        <i class="fa fa-calendar-minus-o"></i>&nbsp;会议日程
+                    </h4>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            2018/12/11
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            2018/12/11
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            2018/12/11
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            2018/12/11
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            2018/12/12
+                        </h4>
+                        <p class="list-group-item-text">
+                            去给老子开会
+                        </p>
+                    </a>
+                </div>
+                <div class="list-group  meeting-notification">
+                    <h4 class="list-group-item-heading notetitle">
+                        <i class="fa fa-bell-o"></i>&nbsp;会议通知
+                    </h4>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            会议地点修改
+                        </h4>
+                        <p class="list-group-item-text">
+                            207有人上课啊啊啊啊啊
+                        </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            你想咋地
+                        </h4>
+                        <p class="list-group-item-text">
+                            开会开会
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4">
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <h4 class="list-group-item-heading notetitle">
+                            <i class="fa fa-envelope-open-o"></i>&nbsp;注意事項
+                        </h4>
+                        <header>
+                            <h2 class="month"></h2>
+                            <div class="btn-prev " href="#">&lsaquo;</div>
+                            <div class="btn-next " href="#">&rsaquo;</div>
+                        </header>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>一</td>
+                                    <td>二</td>
+                                    <td>三</td>
+                                    <td>四</td>
+                                    <td>五</td>
+                                    <td>六</td>
+                                    <td>日</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td date-month="12" date-day="1">1</td>
+                                    <td date-month="12" date-day="2">2</td>
+                                    <td date-month="12" date-day="3">3</td>
+                                    <td date-month="12" date-day="4">4</td>
+                                    <td date-month="12" date-day="5">5</td>
+                                    <td date-month="12" date-day="6">6</td>
+                                    <td date-month="12" date-day="7">7</td>
+                                </tr>
+                                <tr>
+                                    <td date-month="12" date-day="8">8</td>
+                                    <td date-month="12" date-day="9">9</td>
+                                    <td date-month="12" date-day="10">10</td>
+                                    <td date-month="12" date-day="11">11</td>
+                                    <td date-month="12" date-day="12">12</td>
+                                    <td date-month="12" date-day="13">13</td>
+                                    <td date-month="12" date-day="14">14</td>
+                                </tr>
+                                <tr>
+                                    <td date-month="12" date-day="15">15</td>
+                                    <td date-month="12" date-day="16">16</td>
+                                    <td date-month="12" date-day="17">17</td>
+                                    <td date-month="12" date-day="18">18</td>
+                                    <td date-month="12" date-day="19">19</td>
+                                    <td date-month="12" date-day="20">20</td>
+                                    <td date-month="12" date-day="21">21</td>
+                                </tr>
+                                <tr>
+                                    <td date-month="12" date-day="22">22</td>
+                                    <td date-month="12" date-day="23">23</td>
+                                    <td date-month="12" date-day="24">24</td>
+                                    <td date-month="12" date-day="25">25</td>
+                                    <td date-month="12" date-day="26">26</td>
+                                    <td date-month="12" date-day="27">27</td>
+                                    <td date-month="12" date-day="28">28</td>
+                                </tr>
+                                <tr>
+                                    <td date-month="12" date-day="29">29</td>
+                                    <td date-month="12" date-day="30">30</td>
+                                    <td date-month="12" date-day="31">31</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="list">
+                            <div class="day-event" date-month="12" date-day="4">
+                                <a href="#" class="close fontawesome-remove"></a>
+                                <h2 class="title">Lorem ipsum 1</h2>
+                                <p class="date">2015-01-23</p>
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
+                                    standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
+                                    blandade dem för att göra ett provexemplar av en bok.</p>
+                                <label>
+                                    <span>Read more!</span>
+                                </label>
+                            </div>
+                            <div class="day-event" date-month="12" date-day="13">
+                                <a href="#" class="close fontawesome-remove"></a>
+                                <h2 class="title">Lorem ipsum 2</h2>
+                                <p class="date">2015-01-23</p>
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
+                                    standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
+                                    blandade dem för att göra ett provexemplar av en bok.</p>
+                                <label>
+                                    <span>Read more!</span>
+                                </label>
+                            </div>
+                            <div class="day-event" date-month="12" date-day="14">
+                                <a href="#" class="close fontawesome-remove"></a>
+                                <h2 class="title">Lorem ipsum 3</h2>
+                                <p class="date">2015-01-23</p>
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
+                                    standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
+                                    blandade dem för att göra ett provexemplar av en bok.</p>
+                                <label>
+                                    <span>Read more!</span>
+                                </label>
+                            </div>
+                            <div class="day-event" date-month="12" date-day="16">
+                                <a href="#" class="close fontawesome-remove"></a>
+                                <h2 class="title">Lorem ipsum 4</h2>
+                                <p class="date">2015-01-23</p>
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
+                                    standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
+                                    blandade dem för att göra ett provexemplar av en bok.</p>
+                                <label>
+                                    <span>Read more!</span>
+                                </label>
+                            </div>
+                            <div class="day-event" date-month="12" date-day="24">
+                                <a href="#" class="close fontawesome-remove"></a>
+                                <h2 class="title">Lorem ipsum 5</h2>
+                                <p class="date">2015-01-23</p>
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
+                                    standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
+                                    blandade dem för att göra ett provexemplar av en bok.</p>
+                                <label>
+                                    <span>Read more!</span>
+                                </label>
+                            </div>
+                            <div class="day-event" date-month="12" date-day="31">
+                                <a href="#" class="close fontawesome-remove"></a>
+                                <h2 class="title">Lorem ipsum 6</h2>
+                                <p class="date">2014-12-31</p>
+                                <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har
+                                    varit
+                                    standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och
+                                    blandade dem för att göra ett provexemplar av en bok.</p>
+                                <label>
+                                    <span>Read more!</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/simplecalendar.js"></script>
+
+
+    <script>
+        var name = localStorage.getItem("name")
+        var phone = localStorage.getItem("phone")
+
+        $(".name").html(name)
+        $(".describe").html(phone)
+    </script>
+</body>
+
+</html>

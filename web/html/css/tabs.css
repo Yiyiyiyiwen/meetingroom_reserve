@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'AdobeGothicStd-Bold';
+    src: url('/resource/font/AdobeGothicStd-Bold.otf');
+   } 
+   @font-face {
+    font-family: 'zhanghaishan';
+    src: url('/resource/font/zhs.ttf');
+   } 
+   @font-face {
+    font-family: 'mengna';
+    src: url('/resource/font/mengna.ttf');
+   } 
+   @font-face {
+    font-family: 'SIMYOU';
+    src: url('/resource/font/SIMYOU.TTF');
+   }    
+   @font-face {
+    font-family: 'FZLTHJW';
+    src: url('/resource/font/FZLTHJW.TTF');
+   } 
+body{
+    background: #eee;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: url(/resource/stripes-light.png)
+}
+.top{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    position: absolute;
+    right: 0;
+    text-shadow: 2px 1px 0 #fbfae8, 5px 4px 0 #6d88cb;
+    font-family: mengna;
+    font-weight: bold;
+}
+.fa-meetup{
+    margin: 0 20px;
+}
+.fa-sign-out{
+    position: absolute;
+    right: 2%;
+
+}
+.top img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.active{
+    background: #6d88cb!important;
+    color: white!important;
+    box-shadow:3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.active a{
+    color: white;
+}
+
+.navs{
+    width: 300px;
+    height: 100%;
+    background: white;
+    margin: 20px 0 20px 20px;
+    border-radius: 5px;
+    box-shadow:3px 3px 10px rgba(122, 117, 117, 0.4);
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    top: 70px;
+}
+.content-left{
+    width: 100%;
+}
+li{
+    display: flex;
+    justify-content: center;
+}
+.nav a{text-align: center;}
+.nav a:focus{
+    background: white!important;
+}
+.content-left{
+    flex: 1;
+}
+.nav li{
+    padding: 5px 0;
+}
+.list-group{
+    padding:0;
+    margin:20px 40px;
+}
+.col-md-6{
+    padding: 0;
+    margin: 0;
+}
+.item{
+    height: 500px;
+}
+.item img{
+    height: 500px!important;
+    width: 100%;
+}
+.carousel-control{
+    background:rgba(0, 0, 0, 0)!important;
+    display: flex;
+    align-items: center;
+    width: 10px;
+    color: black;
+    font-size: 40px;
+    padding: 0 50px;
+}
+a{
+    color: black;
+}
+a:hover,a:focus{
+    color: black;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.name,.describe{
+    text-align: center;
+    margin: 10px;
+}
+.name{
+    font-size: 30px;
+}
+.describe{
+    margin-top: 0;
+}
+.head img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+.head{
+    text-align: center;
+}
+
+.list-group,.calendar{
+    background: white;
+    box-shadow:3px 3px 10px rgba(122, 117, 117, 0.4);
+}
+.calendar{
+    padding: 20px 0;
+}
+
+.calendar-container{
+    text-align: center;
+}
+.list-group-item {
+    border: 0;
+    border-bottom: 2px solid rgb(238, 237, 237);
+}
+.list-group .active{
+    margin-bottom: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.col-md-3,.col-md-4,.col-md-5{
+    margin: 0!important;
+    padding: 0!important;
+}
+.list-group{
+    margin: 20px;
+    padding: 0;
+}
+.note .list-group-item-text{
+   margin-bottom: 12px;
+}
+.list-group{
+    background: transparent;
+    border: 2px solid black;
+    position: relative;
+}
+.notetitle{
+  position: absolute;
+  top: -15px;
+  left: 7%;
+  background: #eee;
+  font-size: 25px;
+  text-shadow: 2px 1px 0 #fbfae8, 5px 4px 0 #6d88cb;
+  margin: 0 10px;
+  z-index: 2;
+  font-family: SIMYOU;
+  font-weight: bold;
+  background-image: url(/resource/stripes-light.png)
+}
+.information{
+    border: 2px solid black;
+    border-bottom: 0;
+    position: relative;
+
+}
+.nav{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.nav{}

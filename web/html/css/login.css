@@ -1,0 +1,163 @@
+html,body{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/resource/StockSnap_KGSTJH2CB7.jpg');
+}
+.login{
+    display: flex;
+    border-radius: 10px;
+}
+.all{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'AdobeGothicStd-Bold';
+    src: url('/resource/font/AdobeGothicStd-Bold.otf');
+   } 
+   @font-face {
+    font-family: 'zhanghaishan';
+    src: url('/resource/font/zhs.ttf');
+   } 
+   @font-face {
+    font-family: 'SIMYOU';
+    src: url('/resource/font/SIMYOU.TTF');
+   }    
+   @font-face {
+    font-family: 'FZLTHJW';
+    src: url('/resource/font/FZLTHJW.TTF');
+   } 
+.left{
+    width: 450px;
+    height: auto;
+    font-family: AdobeGothicStd-Bold;
+    background-image: url('/resource/bg.png');
+    background-size: cover;
+    z-index: 1;
+}
+.leftin{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.tra{
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+.tra img{
+    width: 70px;
+}
+.right{
+    position: relative;
+    z-index: 0;
+    animation:move 1s;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 120px 60px 120px 60px;
+    font-family: FZLTHJW;
+    box-shadow:5px 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius:10px;
+}
+@keyframes move
+{
+	0% {left: -100%;}
+	100% {left: 0px;}
+}
+
+.register{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.register a{
+    color: white;
+}
+input{
+   border-radius: 0!important;
+   background: transparent;
+   border: 0px!important;
+   color: white;
+   border-bottom: 1px white solid!important;
+}
+
+.myinput{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:transparent;
+}
+.number{
+    margin-right: 10px;
+}
+.top{
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.mybutton{
+    margin-top: 30px;
+    width: 120px;
+    border-radius: 40px;
+    border: 1px white solid;
+    background: transparent;
+    height: 40px;
+    margin-top: 50px;
+}
+.mybutton:link,.mybutton:hover,.mybutton:active,.mybutton:visited,.mybutton:focus{
+    border: 1px black solid!important;
+    background: white;
+    color: black;
+}
+.mybutton:focus{
+
+}
+.input-lg{
+    width: 350px;
+}
+.forget{
+    margin-top: 15px;
+    color: white;
+}
+.title{
+    font-size: 28px;
+}
+a:hover,a:link,a:visited,a:active{
+    color:white;
+    text-decoration: none;
+}
+
+.logintext{
+    font-size: 40px;
+    font-weight: bold;
+    transform:rotate(90deg);
+    letter-spacing:0.3em;
+    position: absolute;
+    top:30%;
+    left: -15%;
+}
+.logintext2{
+    font-size: 40px;
+    font-weight: bold;
+    transform:rotate(90deg);
+    letter-spacing:0.3em;
+    position: absolute;
+    top:42%;
+    left: -35%;
+}
+.left{
+    position: relative;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>输入验证码</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+</head>
+
+<body>
+    <div class="all">
+        <div class="login">
+            <!-- <div class="left" style="width:150px">
+                <div class="leftin">
+                    <div class="logintext2" style="font-size:25px">REGISTER</div>
+                </div>
+            </div> -->
+            <div class="right">
+                <div class="title">请输入验证码</div>
+                <div class="top">
+                    <span>验证码已发送至手机：+86</span>
+                    <span id="phone"></span>
+                </div>
+                <div class="myinput">
+                    <input type="number" class="input-lg" id="name" placeholder="请输入验证码">
+                </div>
+                <div class="top">重发验证码</div>
+                <button type="button" class="mybutton" onclick="next()">下一步</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+        var loc = location.href;
+        var n1 = loc.length;//地址的总长度
+        var n2 = loc.indexOf("=");//取得=号的位置
+        var myinput = decodeURI(loc.substr(n2 + 1, n1 - n2));//从=号后面的内容
+
+
+        var phone = localStorage.getItem("phone")
+        var name = localStorage.getItem("name")
+        var password = localStorage.getItem("password")
+        var captcha
+        $("#phone").html(phone)
+        console.log(phone+" "+name+" "+password)
+
+        $.ajax({
+            url: "/api/public/send_msg?phone=" + phone,
+            async: false,
+            headers:{
+                'Content-Type':'application/json'
+            },
+            success: function (data) {
+                console.log(data)
+            }
+        })
+        $(function () {
+            $.get("/api/public/see_msg/"+phone, {}, function (result) {
+                console.log(result)
+                console.log("验证码为："+result.data)
+                localStorage.setItem("captcha", result.data)
+                captcha = result.data
+            })
+        })
+
+
+        function next() {
+            $(function () {
+            $.get("/api/user/register", {
+                phone:phone,
+                password:password,
+                msg:captcha,
+                name:name
+                }, 
+                function (result) {
+                console.log(result)
+            })
+        })
+
+           window.location.href = "login.html"
+        }
+    </script>
+</body>
+
+</html>
